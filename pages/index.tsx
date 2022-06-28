@@ -1,9 +1,14 @@
-export default function Home() {
-  return (
-    <>
-      <h1 className="text-4xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
-  )
+import { Component, ReactNode } from "react";
+import { ParticlesComponent } from "../components/particles";
+
+export default class extends Component {
+  public render(): ReactNode {
+    return (
+      <>
+        <div className="container">
+          <ParticlesComponent />
+        </div>
+      </>
+    );
+  }
 }
