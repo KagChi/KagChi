@@ -8,14 +8,10 @@ export const ParticlesComponent = () => {
   };
   return (
     <Particles
+      style={{ "zIndex": -1, "display": "block", "position" : "absolute" }}
       id="particles-component"
       init={particlesInit}
       options={{
-        background: {
-          color: {
-            value: "#F7D716",
-          },
-        },
         fpsLimit: 120,
         interactivity: {
           detect_on: "canvas",
@@ -39,7 +35,7 @@ export const ParticlesComponent = () => {
             },
             bubble: {
               distance: 400,
-              size: 40,
+              size: 10,
               duration: 2,
               opacity: 8,
             },
@@ -57,7 +53,7 @@ export const ParticlesComponent = () => {
         },
         particles: {
           color: {
-            value: "#ffffff",
+            value: "#0000",
           },
           links: {
             color: "#ffffff",
@@ -102,7 +98,7 @@ export const ParticlesComponent = () => {
             },
           },
           size: {
-            value: 160,
+            value: 10,
             random: false,
             anim: {
               enable: true,

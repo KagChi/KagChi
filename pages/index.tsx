@@ -2,11 +2,31 @@ import { Component, ReactNode } from "react";
 import { ParticlesComponent } from "../components/particles";
 
 export default class extends Component {
-  public render(): ReactNode {
+  render(): ReactNode {
     return (
       <>
-        <div className="container">
-          <ParticlesComponent />
+      <ParticlesComponent />
+        <div className="container px-6 py-8 mx-auto">
+          <div className="items-center lg:flex">
+            <div className="lg:w-1/2">
+              <h3 className="text-3xl font-segoe-bold text-black ">
+                Hey, im KagChi 👋
+              </h3>
+              <p className="mt-4 font-segoe text-black">
+                Im just a weeb nerds who like to code and doing backend things.
+              </p>
+            </div>
+            <div className="mt-8 lg:mt-0 lg:w-1/2">
+              <div className="flex items-center justify-center lg:justify-end">
+                <div className="max-w-lg">
+                  <img
+                    className="object-cover object-center w-full h-64 rounded-xl shadow"
+                    src="https://i.kagchi.my.id/c372dc62d9ed77172372deda07a4a58e.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );
