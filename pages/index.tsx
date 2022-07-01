@@ -10,10 +10,10 @@ export default class extends Component {
         <div className="container px-6 py-8 mx-auto">
           <div className="items-center lg:flex">
             <div className="lg:w-1/2">
-              <h3 className="text-3xl font-segoe-bold text-black ">
+              <h3 className="text-3xl font-segoe-bold text-black text-center md:text-left">
                 Hey, im KagChi 👋
               </h3>
-              <p className="mt-4 font-segoe text-black">
+              <p className="mt-4 font-segoe text-black text-center md:text-left">
                 Im just a weeb nerds who like to code and doing backend things.
               </p>
             </div>

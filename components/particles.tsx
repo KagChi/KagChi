@@ -8,7 +8,6 @@ export const ParticlesComponent = () => {
   };
   return (
     <Particles
-      style={{ "zIndex": -1, "display": "block", "position" : "absolute" }}
       id="particles-component"
       init={particlesInit}
       options={{
