@@ -11,6 +11,10 @@ export const ParticlesComponent = () => {
       id="particles-component"
       init={particlesInit}
       options={{
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
+        },
         fpsLimit: 120,
         interactivity: {
           detect_on: "canvas",
