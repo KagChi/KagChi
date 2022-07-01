@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Component, ReactNode } from "react";
 import { ParticlesComponent } from "../components/particles";
 
@@ -19,9 +20,11 @@ export default class extends Component {
             <div className="mt-8 lg:mt-0 lg:w-1/2">
               <div className="flex items-center justify-center lg:justify-end">
                 <div className="max-w-lg">
-                  <img
+                  <Image
                     className="object-cover object-center w-full h-64 rounded-xl shadow"
                     src="https://i.kagchi.my.id/c372dc62d9ed77172372deda07a4a58e.png"
+                    height={256}
+                    width={256}
                   />
                 </div>
               </div>
