@@ -24,7 +24,7 @@ export default function render(): ReactNode {
                   @tuneorg
                 </a>{" "}
                 , I like to develop discord bot and its resources. currently i
-                am learning microservied discord bot. and i am working on it
+                am learning microserviced discord bot. and i am working on it
               </p>
 
               <div className="flex items-center mt-6 -mx-2">
