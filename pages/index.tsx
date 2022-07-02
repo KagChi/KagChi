@@ -44,7 +44,7 @@ export default function render(): ReactNode {
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
-            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-teal-accent-400">
+            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-yellow-400">
               <svg className="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
                 <polyline
                   fill="none"
@@ -145,7 +145,7 @@ export default function render(): ReactNode {
             <div className="px-3">
               <img
                 className="object-cover w-40 h-40 rounded-xl shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://cdn.discordapp.com/avatars/489076647727857685/a20d6d7baab44ad66b4470f2e0a016aa.png?size=2048"
+                src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.jpg?size=2048"
                 alt="Musical Tune"
               />
             </div>
