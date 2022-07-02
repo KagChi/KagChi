@@ -44,8 +44,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </header>
         <Component {...pageProps} />
-
-        <div className="relative mt-16 bg-yellow-700">
+      </div>
+      <div className="relative mt-16 bg-yellow-700">
           <svg
             className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-yellow-700"
             preserveAspectRatio="none"
@@ -111,7 +111,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }

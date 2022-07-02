@@ -90,7 +90,7 @@ export default function render(): ReactNode {
                 {" "}
                 among them
               </h2>
-              <p className="text-base text-gray-700 font-segoe md:text-lg">
+              <p className="text-base text-gray-700 font-segoe-italic md:text-lg">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae. explicabo.
