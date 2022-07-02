@@ -149,7 +149,7 @@ export default function render(): ReactNode {
             <div className="px-3">
               <img
                 className="object-cover w-40 h-40 rounded-xl shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.png?size=2048"
+                src="https://cdn.discordapp.com/avatars/931867390160039977/bf9851259926c372f6766223507e34d9.png?size=2048"
                 alt="Musical Tune"
               />
             </div>
