@@ -2,7 +2,7 @@ export const BackGroundComponent = () => {
     return (
       <>
         <div
-          className="w-screen h-screen animate__animated animate__fadeOut animate__faster"
+          className="z-[-1] w-screen h-screen animate__animated animate__fadeOut animate__faster"
           style={{
             position: "absolute",
             top: 0,
