@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <ParticlesComponent />
       <BackGroundComponent />
-      <div className="animate__animated animate__bounceInDown" style={{ "animationDuration": "200ms" }}>
+      <div className="animate__animated animate__bounceInDown animate__faster">
         <header className="p-4">
           <div className="container flex justify-center h-16 mx-auto">
             <ul className="items-stretch space-x-4 flex">
