@@ -99,7 +99,7 @@ export default function render(): ReactNode {
 
               {response && (
                 <>
-                  <p className="text-base text-gray-700 font-segoe-italic md:text-lg">
+                  <p className="text-base font-segoe-italic md:text-lg">
                     "{response.quote}"
                   </p>
                   <p className="text-base text-gray-700 font-segoe md:text-lg">

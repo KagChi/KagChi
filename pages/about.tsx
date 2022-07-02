@@ -69,9 +69,7 @@ export default function render(): ReactNode {
               </h1>
 
               <p className="max-w-2xl mt-4 font-segoe">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-                incidunt ex placeat modi magni quia error alias, adipisci rem
-                similique, at omnis eligendi optio eos harum.
+                Curently project i am working at. Make sure you check some of my project !
               </p>
             </div>
 
