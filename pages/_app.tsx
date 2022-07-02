@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const activeCSS = "dark:text-yellow-700 dark:border-yellow-700";
+  const activeCSS = "text-yellow-700 border-yellow-700";
   const inactiveCSS =
     "hover:text-yellow-700 hover:border-yellow-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110";
   return (
@@ -21,7 +21,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <li className="flex">
                 <button
                   onClick={() => router.push("/")}
-                  className={`flex items-center px-4 -mb-1 font-segoe-bold border-b-2 dark:border-transparent ${
+                  className={`flex items-center px-4 -mb-1 font-segoe-bold border-b-2 ${
                     router.pathname === "/" ? activeCSS : inactiveCSS
                   }`}
                 >
@@ -31,8 +31,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <li className="flex">
                 <button
                   onClick={() => router.push("/about")}
-                  className={`flex items-center px-4 -mb-1 font-segoe-bold border-b-2 dark:border-transparent ${
-                    router.pathname === "/about" ? activeCSS : inactiveCSS
+                  className={`flex items-center px-4 -mb-1 font-segoe-bold border-b-2 ${
+                    router.pathname === "/about" ? "text-yellow-700 border-yellow-700" : inactiveCSS
                   }`}
                 >
                   About
