@@ -137,19 +137,19 @@ export default function render(): ReactNode {
             <div className="flex flex-col items-end px-3">
               <img
                 className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src="https://cdn.discordapp.com/avatars/546627382153576455/5ee994bb1703e95f90cc03851a479ac0.jpg?size=2048"
+                src="https://cdn.discordapp.com/avatars/546627382153576455/5ee994bb1703e95f90cc03851a479ac0.png?size=2048"
                 alt="Tanjiro San"
               />
               <img
                 className="object-cover w-20 h-20 rounded-xl shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.jpg?size=2048"
+                src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.png?size=2048"
                 alt="NezukoChan"
               />
             </div>
             <div className="px-3">
               <img
                 className="object-cover w-40 h-40 rounded-xl shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.jpg?size=2048"
+                src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.png?size=2048"
                 alt="Musical Tune"
               />
             </div>
