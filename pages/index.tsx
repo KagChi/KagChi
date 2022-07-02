@@ -2,9 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import useSWR from "swr";
+
+const fetcher = (input: RequestInfo | URL, init?: RequestInit | undefined) =>
+  fetch(input, init).then((res) => res.json());
 
 export default function render(): ReactNode {
   const router = useRouter();
+  const { data: response } = useSWR("https://animechan.vercel.app/api/random", fetcher);
   return (
     <>
       <Head>
@@ -84,17 +89,29 @@ export default function render(): ReactNode {
             </div>
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 text-3xl font-segoe-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                Become a {" "} <span className="inline-block text-yellow-700">
-                  developer
-                </span>
-                {" "}
+                Become a{" "}
+                <span className="inline-block text-yellow-700">developer</span>{" "}
                 among them
               </h2>
-              <p className="text-base text-gray-700 font-segoe-italic md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae. explicabo.
-              </p>
+
+              {response && (
+                <>
+                  <p className="text-base text-gray-700 font-segoe-italic md:text-lg">
+                    "{response.quote}"
+                  </p>
+                  <p className="text-base text-gray-700 font-segoe md:text-lg">
+                  - {response.character} © {response.anime}
+                  </p>
+                </>
+              )}
+              {!response && (
+                <>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                  </div>
+                </>
+              )}
             </div>
             <div>
               <button
@@ -135,8 +152,6 @@ export default function render(): ReactNode {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 }

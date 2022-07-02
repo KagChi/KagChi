@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-tsparticles": "^2.1.3",
     "sharp": "^0.30.7",
+    "swr": "^1.3.0",
     "tsparticles": "^2.1.3"
   },
   "description": "Just a simple website for my personal website",
