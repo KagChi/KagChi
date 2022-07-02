@@ -9,7 +9,10 @@ const fetcher = (input: RequestInfo | URL, init?: RequestInit | undefined) =>
 
 export default function render(): ReactNode {
   const router = useRouter();
-  const { data: response } = useSWR("https://animechan.vercel.app/api/random", fetcher);
+  const { data: response } = useSWR(
+    "https://animechan.vercel.app/api/random",
+    fetcher
+  );
   return (
     <>
       <Head>
@@ -100,15 +103,16 @@ export default function render(): ReactNode {
                     "{response.quote}"
                   </p>
                   <p className="text-base text-gray-700 font-segoe md:text-lg">
-                  - {response.character} © {response.anime}
+                    - {response.character} © {response.anime}
                   </p>
                 </>
               )}
               {!response && (
                 <>
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="h-2 bg-slate-700 rounded col-span-2"></div>
-                    <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-4 h-4 rounded-full animate-pulse dark:bg-yellow-400"></div>
+                    <div className="w-4 h-4 rounded-full animate-pulse dark:bg-yellow-400"></div>
+                    <div className="w-4 h-4 rounded-full animate-pulse dark:bg-yellow-400"></div>
                   </div>
                 </>
               )}
@@ -133,12 +137,12 @@ export default function render(): ReactNode {
             <div className="flex flex-col items-end px-3">
               <img
                 className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src="https://cdn.discordapp.com/avatars/546627382153576455/5ee994bb1703e95f90cc03851a479ac0.png?size=2048"
+                src="https://cdn.discordapp.com/avatars/546627382153576455/5ee994bb1703e95f90cc03851a479ac0.jpg?size=2048"
                 alt="Tanjiro San"
               />
               <img
                 className="object-cover w-20 h-20 rounded-xl shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.png?size=2048"
+                src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.jpg?size=2048"
                 alt="NezukoChan"
               />
             </div>
