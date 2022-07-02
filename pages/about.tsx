@@ -77,7 +77,7 @@ export default function render(): ReactNode {
               <div>
                 <img
                   className="object-cover rounded-xl aspect-square"
-                  src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.jpg?size=2048"
+                  src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.png?size=2048"
                   alt=""
                 />
 
@@ -93,7 +93,7 @@ export default function render(): ReactNode {
               <div>
                 <img
                   className="object-cover rounded-xl aspect-square"
-                  src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.jpg?size=2048"
+                  src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.png?size=2048"
                   alt=""
                 />
 
