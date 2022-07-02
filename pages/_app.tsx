@@ -44,7 +44,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </header>
         <Component {...pageProps} />
-        <div className="relative mt-16 bg-yellow-700">
+      </div>
+      <div className="relative mt-16 bg-yellow-700">
           <svg
             className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-yellow-700"
             preserveAspectRatio="none"
@@ -96,10 +97,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 © Copyright 2022 KagChi All rights reserved.
               </p>
               <div className="flex items-center mt-4 space-x-4 sm:mt-0">
-                <a
-                  href="https://github.com/KagChi/KagChi"
-                  className="transition-colors duration-300"
-                >
+                <a href="https://github.com/KagChi/KagChi" className="transition-colors duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -113,7 +111,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 }
