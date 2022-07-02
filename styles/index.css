@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "segoe-ui-bold-italic";
+    src: url("../public/assets/fonts/Segoe\ UI\ Bold\ Italic.ttf");
+}
+
+@font-face {
+    font-family: "segoe-ui-bold";
+    src: url("../public/assets/fonts/Segoe\ UI\ Bold.ttf");
+}
+
+@font-face {
+    font-family: "segoe-ui-italic";
+    src: url("../public/assets/fonts/Segoe\ UI\ Italic.ttf");
+}
+
+@font-face {
+    font-family: "segoe-ui";
+    src: url("../public/assets/fonts/Segoe\ UI.ttf");
+}
