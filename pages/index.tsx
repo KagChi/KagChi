@@ -30,8 +30,7 @@ export default function render(): ReactNode {
       const data = JSON.parse(event.data as string) as LanyardIncomingPayload;
       switch (data.op) {
         case LanyardOpcode.Event:
-          if (data.d.spotify) setUser(data.d);
-          else setUser({ ...data.d, ...user, })
+          setUser(data.d);
           break;
         case LanyardOpcode.Hello: {
           if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
@@ -107,9 +106,9 @@ export default function render(): ReactNode {
                   objectFit="contain"
                 />
                   <div className="flex-col justify-items-center relative">
-                    <h3 className="ml-32 mt-0 p-0 lg:p-2 text-lg justify-center w-full text-slate-700"> Listening to <a className="font-segoe-bold break-all"> {user.spotify.song} </a> </h3>
-                      <div className="text-center box-border h-10 text-slate-700 w-40 ml-36 border-4 border-slate-200 rounded-full text-sl font-segoe"> 
-                        <a className="flex mt-1 justify-center">By <a className="font-segoe-bold ml-1"> {user.spotify.artist} </a> </a> 
+                    <h3 className="ml-32 -mt-2 lg:mt-[0.2rem] p-1 lg:p-2 text-lg justify-center w-full text-slate-700"> Listening to <a href={`https://open.spotify.com/track/${user.spotify.track_id}`} className="font-segoe-bold break-all"> {user.spotify.song.length > 14 ? user.spotify.song.slice(0, 10) + "..." : user.spotify.song} </a> </h3>
+                      <div className="text-center box-border h-10 text-slate-700 w-40 p-2 ml-[7rem] lg:ml-[8.5rem] border-4 border-slate-200 rounded-full text-sl font-segoe"> 
+                        <a className="flex -mt-1 justify-center">By <a className="font-segoe-bold ml-1"> {user.spotify.artist.length > 10 ? user.spotify.artist.slice(0, 10) + "..." : user.spotify.artist} </a> </a> 
                       </div>
                   </div>
               </div>

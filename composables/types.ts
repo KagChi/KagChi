@@ -10,6 +10,7 @@ export interface LanyardUser {
             artist: string;
             album_art_url: string;
             album: string;
+            track_id: string;
     	} | null;
 	listening_to_spotify: boolean;
 	kv: {};
