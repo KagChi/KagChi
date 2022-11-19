@@ -98,7 +98,7 @@ export default function render(): ReactNode {
       {
         user?.listening_to_spotify && user.spotify && (
           <>
-            <nav className="flex bg-slate-300 shadow-xl h-[6rem] lg:ml-[12rem] lg:h-[8rem] w-screen m-6 p-4 lg:p-6 rounded-xl bottom-0 fixed">
+            <nav className="flex bg-slate-300 shadow-xl h-[6rem] lg:ml-[12rem] lg:h-[8rem] w-screen m-6 p-4 rounded-xl bottom-0 fixed">
               <div className="flex h-[4rem] w-[4rem] lg:h-[6rem] lg:w-[6rem] relative">
                 <Image
                   className="object-cover object-center rounded-xl shadow"
