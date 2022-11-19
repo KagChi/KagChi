@@ -1,161 +1,125 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { ReactNode } from "react";
-import useSWR from "swr";
-
-const fetcher = (input: RequestInfo | URL, init?: RequestInit | undefined) =>
-  fetch(input, init).then((res) => res.json());
+import { ReactNode, useEffect } from "react";
+import { LanyardIncomingPayload, LanyardOpcode, LanyardUser } from "../composables/types";
+import { useState } from "react";
 
 export default function render(): ReactNode {
-  const router = useRouter();
-  const { data: response } = useSWR(
-    "https://animechan.vercel.app/api/random",
-    fetcher
-  );
+
+  const [ user, setUser ] = useState<LanyardUser | null>(null);
+  const [wsInstance, setWsInstance] = useState<WebSocket | null>(null);
+
+  function connect() {
+    let heartbeatInterval = -1;
+    const websocket = new WebSocket('wss://api.lanyard.rest/socket');
+    setWsInstance(websocket);
+    websocket.onopen = () => console.info('[WS] Successfully connected');
+    websocket.onerror = (event) => {
+      console.error('[WS] Received error: ', event);
+      websocket.close();
+    };
+    websocket.onclose = (event) => {
+      console.error('[WS] Closed with code %d. Retrying in 1 second.', event.code);
+      if (heartbeatInterval !== -1) {
+        window.clearInterval(heartbeatInterval);
+        heartbeatInterval = -1;
+      }
+      window.setTimeout(() => connect(), 1000);
+    };
+    websocket.onmessage = (event) => {
+      const data = JSON.parse(event.data as string) as LanyardIncomingPayload;
+      switch (data.op) {
+        case LanyardOpcode.Event:
+          if (data.d.spotify) setUser(data.d);
+          else setUser({ ...data.d, ...user, })
+          break;
+        case LanyardOpcode.Hello: {
+          if (heartbeatInterval !== -1) window.clearInterval(heartbeatInterval);
+          heartbeatInterval = window.setInterval(
+            () => websocket.send(JSON.stringify({ op: LanyardOpcode.Heartbeat })),
+            data.d.heartbeat_interval
+          );
+          websocket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: "499021389572079620" } }));
+          break;
+        }
+        default:
+          console.info('[WS] Unknown message: %d', data);
+      }
+    };
+  }
+
+  useEffect(() => {
+    if(typeof window !== "undefined") connect();
+   
+    return () => {
+     if(wsInstance?.readyState !== 3) wsInstance?.close();
+    }
+   }, [])
+   
+
   return (
     <>
       <Head>
-        <title>Home - KagChi</title>
+        <title>KagChi</title>
       </Head>
 
-      <div className="container px-6 py-8 mx-auto">
-        <div className="items-center lg:flex">
-          <div className="lg:w-1/2">
-            <h3 className="text-3xl font-segoe-bold text-black text-center md:text-left">
-              Hey, im KagChi 👋
-            </h3>
-            <p className="mt-4 font-segoe text-black text-center md:text-left">
-              Im just a weeb nerds who like to code and doing backend things.
-            </p>
-          </div>
-          <div className="mt-8 lg:mt-0 lg:w-1/2">
-            <div className="flex items-center justify-center lg:justify-end">
-              <div className="max-w-lg">
-                <Image
-                  className="object-cover object-center w-full h-64 rounded-xl shadow"
-                  src="https://i.kagchi.my.id/c372dc62d9ed77172372deda07a4a58e.png"
-                  height={256}
-                  width={256}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
-            <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-yellow-400">
-              <svg className="text-teal-900 w-7 h-7" viewBox="0 0 24 24">
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  points=" 8,5 8,1 16,1 16,5"
-                  strokeLinejoin="round"
-                />
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  points="9,15 1,15 1,5 23,5 23,15 15,15"
-                  strokeLinejoin="round"
-                />
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  points="22,18 22,23 2,23 2,18"
-                  strokeLinejoin="round"
-                />
-                <rect
-                  x="9"
-                  y="13"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  width="6"
-                  height="4"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
-            <div className="max-w-xl mb-6">
-              <h2 className="max-w-lg mb-6 text-3xl font-segoe-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                Become a{" "}
-                <span className="inline-block text-yellow-700">developer</span>{" "}
-                among them
-              </h2>
-
-              {response && (
+      <div className="lg:flex"> 
+        <div className="flex bg-slate-300 shadow-xl h-[8rem] w-auto lg:h-screen lg:w-[12rem] p-4 m-6 lg:m-14 rounded-xl">
+          <div className="lg:h-[10rem] lg:w-[12rem]">
+              {!user && (
                 <>
-                  <p className="text-base font-segoe-italic md:text-lg">
-                    "{response.quote}"
-                  </p>
-                  <p className="text-base text-gray-700 font-segoe md:text-lg">
-                    - {response.character} © {response.anime}
-                  </p>
-                </>
-              )}
-              {!response && (
-                <>
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="w-4 h-4 rounded-full animate-pulse bg-yellow-400"></div>
-                    <div className="w-4 h-4 rounded-full animate-pulse bg-yellow-400"></div>
-                    <div className="w-4 h-4 rounded-full animate-pulse bg-yellow-400"></div>
+                  <div className="flex h-[6rem] lg:h-[10rem] justify-center items-center space-x-2">
+                    <div className="w-4 h-4 justify-center rounded-full animate-pulse bg-slate-200"></div>
+                    <div className="w-4 h-4 justify-center rounded-full animate-pulse bg-slate-200"></div>
+                    <div className="w-4 h-4 justify-center rounded-full animate-pulse bg-slate-200"></div>
                   </div>
                 </>
               )}
-            </div>
-            <div>
-              <button
-                onClick={() => router.push("/about")}
-                className="inline-flex items-center font-segoe-bold transition-colors duration-200 text-yellow-700 hover:text-yellow-800"
-              >
-                Learn more
-                <svg
-                  className="inline-block w-3 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-                </svg>
-              </button>
-            </div>
+
+              {user && (
+                <>
+                  <div className="flex h-[6rem] w-[6rem] lg:h-[10rem] lg:w-[10rem] relative">
+                    <Image
+                      className="object-cover object-center rounded-xl shadow"
+                      src={`https://cdn.discordapp.com/avatars/${user.discord_user.id}/${user.discord_user.avatar}.${user.discord_user.avatar.startsWith("a_") ? "gif" : "png"}?size=4096`}
+                      layout="fill"
+                      objectFit="contain"
+                  / >
+                    <div className="flex grid justify-items-center relative">
+                      <h3 className="ml-32 lg:ml-0 mt-0 lg:mt-44 text-3xl font-segoe-bold justify-center text-slate-700"> KagChi </h3>
+                      <div className="text-center box-border ml-32 lg:ml-0 h-10 text-slate-700 w-40 mt-6 border-4 border-slate-200 rounded-full text-sl font-segoe"> <a className="flex mt-1 ml-2">Backend Developer</a> </div>
+                    </div>
+                  </div>
+                </>
+              )}
+
           </div>
-          <div className="flex items-center justify-center -mx-4 lg:pl-8">
-            <div className="flex flex-col items-end px-3">
-              <img
-                className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-                src="https://cdn.discordapp.com/avatars/546627382153576455/5ee994bb1703e95f90cc03851a479ac0.png?size=2048"
-                alt="Tanjiro San"
-              />
-              <img
-                className="object-cover w-20 h-20 rounded-xl shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-                src="https://cdn.discordapp.com/avatars/616169470293049344/8816a7d1410bf85998c36775b2ba9990.png?size=2048"
-                alt="NezukoChan"
-              />
-            </div>
-            <div className="px-3">
-              <img
-                className="object-cover w-40 h-40 rounded-xl shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-                src="https://cdn.discordapp.com/avatars/932933299687538698/766f3eac3f40d4b9de00033559bf2858.jpg?size=2048"
-                alt="Musical Tune"
-              />
-            </div>
-          </div>
+
+      {
+        user?.listening_to_spotify && user.spotify && (
+          <>
+            <nav className="flex bg-slate-300 shadow-xl h-[6rem] lg:ml-[12rem] lg:h-[8rem] w-screen m-6 p-4 lg:p-6 rounded-xl bottom-0 fixed">
+              <div className="flex h-[4rem] w-[4rem] lg:h-[6rem] lg:w-[6rem] relative">
+                <Image
+                  className="object-cover object-center rounded-xl shadow"
+                  src={user.spotify.album_art_url}
+                  layout="fill"
+                  objectFit="contain"
+                />
+                  <div className="flex-col justify-items-center relative">
+                    <h3 className="ml-32 mt-0 p-0 lg:p-2 text-lg justify-center w-full text-slate-700"> Listening to <a className="font-segoe-bold break-all"> {user.spotify.song} </a> </h3>
+                      <div className="text-center box-border h-10 text-slate-700 w-40 ml-36 border-4 border-slate-200 rounded-full text-sl font-segoe"> 
+                        <a className="flex mt-1 justify-center">By <a className="font-segoe-bold ml-1"> {user.spotify.artist} </a> </a> 
+                      </div>
+                  </div>
+              </div>
+            </nav>
+        </>
+        )
+      }
         </div>
       </div>
+      
     </>
   );
 }
