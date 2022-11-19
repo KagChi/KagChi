@@ -94,29 +94,31 @@ export default function render(): ReactNode {
 
           </div>
 
-      {
-        user?.listening_to_spotify && user.spotify && (
-          <>
-            <nav className="flex bg-slate-300 shadow-xl h-[6rem] lg:ml-[12rem] lg:h-[8rem] w-screen m-6 p-4 rounded-xl bottom-0 fixed">
-              <div className="flex h-[4rem] w-[4rem] lg:h-[6rem] lg:w-[6rem] relative">
-                <Image
-                  className="object-cover object-center rounded-xl shadow"
-                  src={user.spotify.album_art_url}
-                  layout="fill"
-                  objectFit="contain"
-                />
-                  <div className="flex-col justify-items-center relative">
-                    <h3 className="ml-32 -mt-2 lg:mt-[0.2rem] p-1 lg:p-2 text-lg justify-center w-full text-slate-700"> Listening to <a href={`https://open.spotify.com/track/${user.spotify.track_id}`} className="font-segoe-bold break-all"> {user.spotify.song.length > 14 ? user.spotify.song.slice(0, 10) + "..." : user.spotify.song} </a> </h3>
-                      <div className="text-center box-border h-10 text-slate-700 w-40 p-2 ml-[7rem] lg:ml-[8.5rem] border-4 border-slate-200 rounded-full text-sl font-segoe"> 
-                        <a className="flex -mt-1 justify-center">By <a className="font-segoe-bold ml-1"> {user.spotify.artist.length > 10 ? user.spotify.artist.slice(0, 10) + "..." : user.spotify.artist} </a> </a> 
-                      </div>
-                  </div>
-              </div>
-            </nav>
-        </>
-        )
-      }
         </div>
+
+        {
+          user?.listening_to_spotify && user.spotify && (
+            <>
+              <nav className="flex bg-slate-300 shadow-xl h-[6rem] lg:ml-[17rem] lg:h-[8rem] w-screen m-6 p-4 rounded-xl bottom-0 fixed">
+                <div className="flex h-[4rem] w-[4rem] lg:h-[6rem] lg:w-[6rem] relative">
+                  <Image
+                    className="object-cover rounded-xl shadow"
+                    src={user.spotify.album_art_url}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                    
+                </div>
+                    <div className="flex-col pl-[2rem] w-full lg:p-4 h-auto justify-items-center relative">
+                      <h3 className="text-sm md:text-m lg:text-lg text-slate-700"> Listening to <a href={`https://open.spotify.com/track/${user.spotify.track_id}`} className="font-segoe-bold"> {user.spotify.song} </a> </h3>
+                        <div className="text-center box-border h-10 text-slate-700 p-2 border-4 border-slate-200 rounded-full text-sl font-segoe"> 
+                          <a className="flex text-sm md:text-m lg:text-lg lg:-mt-2">By <a className="font-segoe-bold ml-1"> {user.spotify.artist} </a> </a> 
+                        </div>
+                    </div>
+              </nav>
+          </>
+          )
+        }
       </div>
       
     </>
