@@ -6,11 +6,11 @@ export interface LanyardUser {
             start: number;
             end: number;
         };
-        song: string;
-        artist: string;
-        album_art_url: string;
-        album: string;
-    } | null;
+            song: string;
+            artist: string;
+            album_art_url: string;
+            album: string;
+    	} | null;
 	listening_to_spotify: boolean;
 	kv: {};
 	discord_user: DiscordUser;
