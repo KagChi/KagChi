@@ -83,10 +83,10 @@ export default function render(): ReactNode {
                       src={`https://cdn.discordapp.com/avatars/${user.discord_user.id}/${user.discord_user.avatar}.${user.discord_user.avatar.startsWith("a_") ? "gif" : "png"}?size=4096`}
                       layout="fill"
                       objectFit="contain"
-                  / >
-                    <div className="flex grid justify-items-center relative">
-                      <h3 className="ml-32 lg:ml-0 mt-0 lg:mt-44 text-3xl font-segoe-bold justify-center text-slate-700"> KagChi </h3>
-                      <div className="text-center box-border ml-32 lg:ml-0 h-10 text-slate-700 w-40 mt-6 border-4 border-slate-200 rounded-full text-sl font-segoe"> <a className="flex mt-1 ml-2">Backend Developer</a> </div>
+                    />
+                    <div className="flex-col pl-[8rem] lg:pl-0 lg:pt-[11rem] justify-items-center relative">
+                      <h3 className="text-3xl font-segoe-bold text-center text-slate-700"> KagChi </h3>
+                      <div className="flex text-center box-border h-10 text-slate-700 w-40 mt-6 border-4 border-slate-200 rounded-full text-sl font-segoe"> <a className="flex mt-1 ml-2">Backend Developer</a> </div>
                     </div>
                   </div>
                 </>
@@ -110,7 +110,7 @@ export default function render(): ReactNode {
                     
                 </div>
                     <div className="flex-col pl-[2rem] w-full lg:p-4 h-auto justify-items-center relative">
-                      <h3 className="text-sm md:text-m lg:text-lg text-slate-700"> Listening to <a href={`https://open.spotify.com/track/${user.spotify.track_id}`} className="font-segoe-bold"> {user.spotify.song} </a> </h3>
+                        <h3 className="text-sm md:text-m lg:text-lg text-slate-700"> Listening to <a href={`https://open.spotify.com/track/${user.spotify.track_id}`} className="font-segoe-bold"> {user.spotify.song} </a> </h3>
                         <div className="text-center box-border h-10 text-slate-700 p-2 border-4 border-slate-200 rounded-full text-sl font-segoe"> 
                           <a className="flex text-sm md:text-m lg:text-lg lg:-mt-2">By <a className="font-segoe-bold ml-1"> {user.spotify.artist} </a> </a> 
                         </div>
