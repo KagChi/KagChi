@@ -62,10 +62,6 @@ export default function RootLayout({
                   </Link>
                 </NavbarItem>
               </div>
-
-              <NavbarItem className="hidden lg:flex">
-                <Link href="#">Login</Link>
-              </NavbarItem>
               <NavbarItem>
                 <ThemeToggler />
               </NavbarItem>
