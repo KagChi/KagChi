@@ -1,14 +1,22 @@
-/** @type {import('tailwindcss').Config} */
+const { nextui } = require("@nextui-org/react");
+const flowbite = require("flowbite/plugin");
+
 module.exports = {
   mode: "jit",
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+  content: [
+    "./src/components/**/*.tsx",
+    "./src/apps/**/*.tsx",
+    "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        "segoe-bold": ["segoe-ui-bold"],
-        segoe: ["segoe-ui"],
-        "segoe-bold-italic": ["segoe-ui-bold-italic"],
-        "segoe-italic": ["segoe-ui-italic"],
+        segoe: ["Segoe UI"],
+        "segoe-bold": ["Segoe UI Bold"],
+        "segoe-bold-italic": ["Segoe UI Bold Italic"],
+        "segoe-italic": ["Segoe UI Italic"],
       },
       colors: {
         red: {
@@ -328,5 +336,21 @@ module.exports = {
     opacity: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
   },
-  plugins: [],
+  plugins: [
+    flowbite,
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            primary: "#7828c8",
+          },
+        },
+        dark: {
+          colors: {
+            primary: "#9353d3",
+          },
+        },
+      },
+    }),
+  ],
 };
