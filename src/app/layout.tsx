@@ -10,6 +10,7 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { ThemeToggler } from "../components/ThemeToggler";
+import { BirthdayPartyProtocol } from "../components/BirthdayPartyProtocol";
 
 export default function RootLayout({
   children,
@@ -26,6 +27,7 @@ export default function RootLayout({
         `}
       </style>
       <body>
+        <BirthdayPartyProtocol />
         <Providers>
           <Navbar as={"div"} isBlurred={false} className="transparent mt-2">
             <NavbarBrand className="space-x-2">
