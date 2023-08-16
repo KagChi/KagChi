@@ -53,14 +53,14 @@ export default function RootLayout({
                     <p className="font-bold text-inherit">Home</p>
                   </Link>
                 </NavbarItem>
-                <NavbarItem isActive>
-                  <Link href="#" aria-current="page">
-                    <p className="font-bold text-inherit">Blog</p>
-                  </Link>
-                </NavbarItem>
                 <NavbarItem>
                   <Link color="foreground" href="#">
                     <p className="font-bold text-inherit">Contact</p>
+                  </Link>
+                </NavbarItem>
+                <NavbarItem>
+                  <Link href="#" aria-current="page">
+                    <p className="font-bold text-inherit">Blog</p>
                   </Link>
                 </NavbarItem>
               </div>

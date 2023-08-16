@@ -5,7 +5,7 @@ module.exports = {
   mode: "jit",
   content: [
     "./src/components/**/*.tsx",
-    "./src/apps/**/*.tsx",
+    "./src/app/**/*.tsx",
     "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],

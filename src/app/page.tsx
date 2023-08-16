@@ -1,5 +1,5 @@
 "use client";
-import { Image } from "@nextui-org/react";
+import { Image, Skeleton } from "@nextui-org/react";
 import NextImage from "next/image";
 import { useUser } from "../states/user";
 import { CDNRoutes, ImageFormat, RouteBases } from "discord-api-types/v10";
@@ -16,30 +16,41 @@ export default function RootPage() {
 
   return (
     <>
-      {isVisible && user && (
+      {isVisible && (
         <div className="flex flex-col w-full h-auto items-center mt-6">
-          <Image
-            as={NextImage}
-            height={128}
-            width={128}
-            isBlurred
-            src={`${RouteBases.cdn}/${CDNRoutes.userAvatar(
-              user.data.discord_user.id,
-              user.data.discord_user.avatar,
-              ImageFormat.JPEG,
-            )}?size=4096`}
-            alt="User Avatar"
-            classNames={{
-              wrapper: "flex pt-6",
-              blurredImg: "flex pt-6",
-            }}
-          />
+          <div className="mt-6 w-36 h-36">
+            {user && (
+              <>
+                <Image
+                  as={NextImage}
+                  height={128}
+                  width={128}
+                  isBlurred
+                  src={`${RouteBases.cdn}/${CDNRoutes.userAvatar(
+                    user.data.discord_user.id,
+                    user.data.discord_user.avatar,
+                    ImageFormat.JPEG,
+                  )}?size=4096`}
+                  alt="User Avatar"
+                />
 
-          <p className="font-bold text-2xl mt-4">
-            {user.data.discord_user.global_name}
-          </p>
-          <p className="text-sm">
-            {new Date().getFullYear() - 2005} yo | Backend Developer
+                <p className="font-bold text-2xl mt-4">
+                  {user.data.discord_user.global_name}
+                </p>
+              </>
+            )}
+
+            {!user && (
+              <>
+                <div className="w-full flex flex-col gap-4 pr-4">
+                  <Skeleton className="h-[130px] w-5/5 rounded-lg" />
+                  <Skeleton className="h-6 w-5/5 rounded-lg" />
+                </div>
+              </>
+            )}
+          </div>
+          <p className="text-sm mt-7 mr-6">
+            {new Date().getFullYear() - 2005} y/o | Backend Developer
           </p>
         </div>
       )}
