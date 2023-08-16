@@ -18,26 +18,24 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <style jsx global>
-        {`
-          html {
-            transition: background-color 0.3s ease-in-out;
-          }
-        `}
-      </style>
       <body>
         <Providers>
-          <Navbar isBlurred={false} className="transparent">
+          <Navbar as={"div"} isBlurred={false} className="transparent mt-2">
             <NavbarBrand className="space-x-2">
               <Image
+                isBlurred
                 src="/assets/images/K_Logo.jpg"
                 alt="logo"
-                loading="lazy"
                 height={32}
                 width={32}
                 radius="md"
               ></Image>
-              <p className="font-bold text-inherit">KagChi</p>
+              <a
+                href="https://www.kagchi.my.id"
+                className="font-bold text-inherit"
+              >
+                KagChi
+              </a>
             </NavbarBrand>
             <NavbarContent justify="end">
               <div className="hidden sm:flex gap-4">
@@ -66,7 +64,7 @@ export default function RootLayout({
               </NavbarItem>
             </NavbarContent>
           </Navbar>
-          {children}
+          <main>{children}</main>
         </Providers>
       </body>
     </html>

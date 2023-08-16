@@ -22,12 +22,9 @@
   src: url("/public/assets/fonts/Segoe UI.ttf");
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .transparent {
   background: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar {
