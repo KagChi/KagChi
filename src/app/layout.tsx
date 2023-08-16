@@ -18,6 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
+      <style jsx global>
+        {`
+          html {
+            transition: background-color 0.3s ease-in-out;
+          }
+        `}
+      </style>
       <body>
         <Providers>
           <Navbar as={"div"} isBlurred={false} className="transparent mt-2">

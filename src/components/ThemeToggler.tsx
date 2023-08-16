@@ -2,6 +2,18 @@ import { Button } from "@nextui-org/button";
 import { useTheme } from "next-themes";
 import { HiSun, HiMoon } from "react-icons/hi";
 
+const Toggler = ({ theme }) => {
+  if (theme === "light") {
+    return <HiMoon className="text-2xl" />;
+  }
+
+  if (theme === "dark") {
+    return <HiSun className="text-2xl" />;
+  }
+  
+  return Toggler({ theme });
+}
+
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
@@ -13,11 +25,7 @@ export const ThemeToggler = () => {
       radius="full"
       isIconOnly
     >
-      {theme === "light" ? (
-        <HiSun className="text-2xl" />
-      ) : (
-        <HiMoon className="text-2xl" />
-      )}
+      <Toggler theme={theme} />
     </Button>
   );
 };
