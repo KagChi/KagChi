@@ -11,12 +11,13 @@ const Toggler = ({ theme }) => {
     return <HiSun className="text-2xl" />;
   }
 
-  return Toggler({ theme });
+  return <HiMoon className="text-2xl" />;
 };
 
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
 
+  if (theme.length === 0) setTheme("light");
   return (
     <Button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

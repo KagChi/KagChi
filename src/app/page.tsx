@@ -31,7 +31,7 @@ export default function RootPage() {
           <p className="font-bold text-2xl mt-4">
             {user.data.discord_user.global_name}
           </p>
-          <p className="text-sm">Backend Developer</p>
+          <p className="text-sm">{new Date().getFullYear() - 2005} yo | Backend Developer</p>
         </div>
       )}
     </>
