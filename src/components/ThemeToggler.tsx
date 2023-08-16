@@ -16,8 +16,8 @@ const Toggler = ({ theme }) => {
 
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
+  if (!theme || theme.length === 0) setTheme("light");
 
-  if (theme.length === 0) setTheme("light");
   return (
     <Button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
