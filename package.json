@@ -15,7 +15,7 @@
     "@nextui-org/system": "^2.0.5",
     "@nextui-org/theme": "^2.0.5",
     "animate.css": "^4.1.1",
-    "discord-api-types": "^0.37.18",
+    "discord-api-types": "^0.37.53",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.5.0",
     "framer-motion": "^10.15.2",
@@ -24,7 +24,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "swr": "^2.2.0"
+    "reactish-state": "^0.11.0",
+    "swr": "^2.2.1",
+    "undici": "^5.23.0"
   },
   "description": "Just a simple website for my personal website",
   "version": "3.0.0",

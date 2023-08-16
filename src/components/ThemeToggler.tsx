@@ -10,9 +10,9 @@ const Toggler = ({ theme }) => {
   if (theme === "dark") {
     return <HiSun className="text-2xl" />;
   }
-  
+
   return Toggler({ theme });
-}
+};
 
 export const ThemeToggler = () => {
   const { theme, setTheme } = useTheme();
