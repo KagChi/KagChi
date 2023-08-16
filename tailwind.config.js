@@ -344,13 +344,14 @@ module.exports = {
           colors: {
             primary: "#FF7000",
             secondary: "#EE457E",
-          }
+            background: "#FAE392",
+          },
         },
         dark: {
           colors: {
             primary: "#F86F03",
             secondary: "#EE457E",
-          }
+          },
         },
       },
     }),

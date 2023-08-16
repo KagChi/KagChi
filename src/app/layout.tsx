@@ -18,9 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
+      <style jsx global>
+        {`
+          html {
+            transition: background-color 0.3s ease-in-out;
+          }
+        `}
+      </style>
       <body>
         <Providers>
-          <Navbar className="transparent">
+          <Navbar isBlurred={false} className="transparent">
             <NavbarBrand className="space-x-2">
               <Image
                 src="/assets/images/K_Logo.jpg"
