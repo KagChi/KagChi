@@ -342,13 +342,15 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            primary: "#7828c8",
-          },
+            primary: "#FF7000",
+            secondary: "#EE457E",
+          }
         },
         dark: {
           colors: {
-            primary: "#9353d3",
-          },
+            primary: "#F86F03",
+            secondary: "#EE457E",
+          }
         },
       },
     }),

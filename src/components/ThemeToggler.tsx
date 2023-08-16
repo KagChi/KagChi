@@ -13,7 +13,7 @@ export const ThemeToggler = () => {
       radius="full"
       isIconOnly
     >
-      {theme === "dark" ? (
+      {theme === "light" ? (
         <HiSun className="text-2xl" />
       ) : (
         <HiMoon className="text-2xl" />
