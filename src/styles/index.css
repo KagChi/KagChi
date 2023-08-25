@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Segoe UI Bold Italic";
+  src: url("/public/assets/fonts/ UI Bold Italic.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url("/public/assets/fonts/Segoe UI Bold.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Italic";
+  src: url("/public/assets/fonts/Segoe UI Italic.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/public/assets/fonts/Segoe UI.ttf");
+}
+
+.transparent {
+  background: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px rgb(71 85 105);
+  height: 40px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(71 85 105);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100 116 139);
+}

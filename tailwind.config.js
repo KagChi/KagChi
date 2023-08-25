@@ -1,14 +1,38 @@
-/** @type {import('tailwindcss').Config} */
+const { nextui } = require("@nextui-org/react");
+const flowbite = require("flowbite/plugin");
+
 module.exports = {
   mode: "jit",
-  content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+  content: [
+    "./src/components/**/*.tsx",
+    "./src/app/**/*.tsx",
+    "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        "segoe-bold": ["segoe-ui-bold"],
-        segoe: ["segoe-ui"],
-        "segoe-bold-italic": ["segoe-ui-bold-italic"],
-        "segoe-italic": ["segoe-ui-italic"],
+        segoe: ["Segoe UI"],
+        "segoe-bold": ["Segoe UI Bold"],
+        "segoe-bold-italic": ["Segoe UI Bold Italic"],
+        "segoe-italic": ["Segoe UI Italic"],
+      },
+      screens: {
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
       },
       colors: {
         red: {
@@ -328,5 +352,24 @@ module.exports = {
     opacity: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
   },
-  plugins: [],
+  plugins: [
+    flowbite,
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            primary: "#FF7000",
+            secondary: "#EE457E",
+            background: "#FAE392",
+          },
+        },
+        dark: {
+          colors: {
+            primary: "#F86F03",
+            secondary: "#EE457E",
+          },
+        },
+      },
+    }),
+  ],
 };
