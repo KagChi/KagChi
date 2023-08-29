@@ -12,12 +12,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        segoe: ["Segoe UI"],
-        "segoe-bold": ["Segoe UI Bold"],
-        "segoe-bold-italic": ["Segoe UI Bold Italic"],
-        "segoe-italic": ["Segoe UI Italic"],
-      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }

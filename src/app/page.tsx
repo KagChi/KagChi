@@ -34,7 +34,7 @@ export default function RootPage() {
                   alt="User Avatar"
                 />
 
-                <p className="font-bold text-2xl mt-4">
+                <p className="font-pixel text-2xl mt-4">
                   {user.data.discord_user.global_name}
                 </p>
               </>
@@ -49,7 +49,7 @@ export default function RootPage() {
               </>
             )}
           </div>
-          <p className="text-sm mt-7 mr-6">
+          <p className="text-sm mt-7 mr-6 font-pixel">
             {new Date().getFullYear() - 2005} y/o | Backend Developer
           </p>
         </div>

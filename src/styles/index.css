@@ -3,23 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Segoe UI Bold Italic";
-  src: url("/public/assets/fonts/ UI Bold Italic.ttf");
-}
-
-@font-face {
-  font-family: "Segoe UI Bold";
-  src: url("/public/assets/fonts/Segoe UI Bold.ttf");
-}
-
-@font-face {
-  font-family: "Segoe UI Italic";
-  src: url("/public/assets/fonts/Segoe UI Italic.ttf");
-}
-
-@font-face {
-  font-family: "Segoe UI";
-  src: url("/public/assets/fonts/Segoe UI.ttf");
+  font-family: "pixel";
+  src: url("/assets/fonts/Pixeled.ttf") format("ttf");
 }
 
 .transparent {
