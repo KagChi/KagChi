@@ -18,7 +18,7 @@
     "canvas-confetti": "^1.6.0",
     "discord-api-types": "^0.37.55",
     "flowbite": "^1.8.1",
-    "flowbite-react": "^0.5.0",
+    "flowbite-react": "^0.6.0",
     "framer-motion": "^10.16.1",
     "next": "^13.4.19",
     "next-themes": "^0.2.1",
