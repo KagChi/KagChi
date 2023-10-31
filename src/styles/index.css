@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "pixel";
-  src: url("/assets/fonts/Pixeled.ttf") format("ttf");
+* {
+  font-family: "Tilt Neon", sans-serif;
 }
 
 .transparent {

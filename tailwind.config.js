@@ -12,6 +12,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        pixel: ["'Press Start 2P', sans-serif"]
+      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }
