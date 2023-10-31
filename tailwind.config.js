@@ -13,10 +13,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        segoe: ["Segoe UI"],
-        "segoe-bold": ["Segoe UI Bold"],
-        "segoe-bold-italic": ["Segoe UI Bold Italic"],
-        "segoe-italic": ["Segoe UI Italic"],
+        pixel: ["'Press Start 2P', sans-serif"]
       },
       screens: {
         sm: "640px",

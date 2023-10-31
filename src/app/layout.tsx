@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import "../styles/index.css";
 import { Providers } from "./providers";
@@ -26,6 +27,11 @@ export default function RootLayout({
           }
         `}
       </style>
+      <head>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css?family=Tilt+Neon&display=swap" rel="stylesheet"  />
+      </head>
       <body>
         <BirthdayPartyProtocol />
         <Providers>
