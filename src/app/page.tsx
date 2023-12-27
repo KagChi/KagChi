@@ -3,6 +3,7 @@ import { useUser } from "../states/user";
 import { useEffect, useState } from "react";
 import { isBirthday } from "../components/BirthdayPartyProtocol";
 import { Image } from "@nextui-org/react";
+import { RouteBases, CDNRoutes, ImageFormat } from "discord-api-types/v10";
 
 export default function RootPage() {
   const user = useUser();
@@ -15,13 +16,45 @@ export default function RootPage() {
   return (
     <>
       <div className="flex px-4">
-          <div className="flex flex-col ml-auto mr-auto justify-center items-center">
-            <div className="flex ml-auto mr-auto mt-auto mb-auto h-64 object-center justify-center items-center">
-              <Image className="static" loading="lazy" src="https://count.getloli.com/get/@kagchi?theme=rule34" alt="moe-counter"></Image>
-            </div>
+        <div className="flex flex-col ml-auto mr-auto justify-center items-center">
+          {user && isVisible && (
+            <>
+              <Image
+                height={128}
+                width={128}
+                isBlurred
+                src={`${RouteBases.cdn}${CDNRoutes.userAvatar(
+                  user.data.discord_user.id,
+                  user.data.discord_user.avatar,
+                  ImageFormat.JPEG,
+                )}?size=4096`}
+                alt="User Avatar"
+              />
 
-            <p>A Fullstack Weeb Developer</p>
-          </div>
+              <p className="font-bold text-2xl mt-4">
+                {user.data.discord_user.global_name}
+              </p>
+            </>
+          )}
+
+          {
+            !user && isVisible && <>
+              <Image
+                height={128}
+                width={128}
+                isBlurred
+                src={"https://cdn.discordapp.com/avatars/499021389572079620/849cb35fc8da4960a7371bbfb7a4d49d.jpeg?size=4096"}
+                alt="User Avatar"
+              />
+
+              <p className="font-bold text-2xl mt-4">
+                Loading...
+              </p>
+            </>
+          }
+
+          { isVisible && <p>A Fullstack Weeb Developer</p> }
+        </div>
       </div>
     </>
   );
