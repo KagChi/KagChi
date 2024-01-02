@@ -27,7 +27,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "reactish-state": "^0.11.0",
-    "swr": "^2.2.1"
+    "swr": "^2.2.4"
   },
   "description": "Just a simple website for my personal website",
   "version": "3.0.0",
