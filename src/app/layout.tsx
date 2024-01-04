@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
+import { BirthdayPartyProtocol } from "../components/BirthdayPartyProtocol";
 import ScrollSmooth from "../components/ScrollSmooth";
 import "../styles/index.css";
 import { Providers } from "./providers";
@@ -29,6 +30,7 @@ export default function RootLayout({
         </head>
         <body>
           <ScrollSmooth>
+            <BirthdayPartyProtocol />
             <Providers>
               <main>{children}</main>
             </Providers>
