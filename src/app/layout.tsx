@@ -43,7 +43,7 @@ export default function RootLayout({
                       transform: "scaleX(-1)"
                     }}
                     width={2256} height={2256}
-                    className="w-12 h-12 rounded-full border-3 border-white" src="/assets/images/K_Logo.webp" alt="K_Logo" />
+                    className="w-12 h-12 rounded-full border-2 border-white" src="/assets/images/K_Logo.webp" alt="K_Logo" />
 
                   <div className="flex flex-row justify-center items-center w-auto h-12 bg-white rounded-2xl gap-2 p-1 px-2">
                     <button className="flex md:hidden bg-[#EE7214] h-8 w-24 items-center justify-center rounded-lg text-white font-bold">
