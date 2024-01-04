@@ -28,7 +28,7 @@ export default function RootLayout({
         <head>
           <link href="https://fonts.googleapis.com" rel="preconnect" />
           <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="" />
-          <link href="https://fonts.googleapis.com/css?family=Tilt+Neon&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Tilt+Neon&display=optional" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css?family=Rubik&display=optional" rel='stylesheet' />
           <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=optional" rel='stylesheet' />
         </head>
