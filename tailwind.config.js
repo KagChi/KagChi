@@ -1,6 +1,3 @@
-const { nextui } = require("@nextui-org/react");
-const flowbite = require("flowbite/plugin");
-
 module.exports = {
   mode: "jit",
   content: [
@@ -352,24 +349,5 @@ module.exports = {
     opacity: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
   },
-  plugins: [
-    flowbite,
-    nextui({
-      themes: {
-        light: {
-          colors: {
-            primary: "#FF7000",
-            secondary: "#EE457E",
-            background: "#D9D9D9",
-          },
-        },
-        dark: {
-          colors: {
-            primary: "#F86F03",
-            secondary: "#D9D9D9",
-          },
-        },
-      },
-    }),
-  ],
+  plugins: [],
 };
