@@ -5,10 +5,7 @@ import Image from "next/image";
 export default function RootPage() {
   return (
     <>
-      <div className="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center"
-        style={{
-          backgroundImage: "url('./assets/images/K_Background.webp')"
-        }}>
+      <div className="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
         <div className="h-screen w-full">
           <div className="mt-40">
             <div className="flex flex-col w-full lg:w-1/2 px-6 md:px-12 lg:px-32 gap-4">
