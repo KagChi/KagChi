@@ -15,7 +15,8 @@ module.exports = {
       fontFamily: {
         pixel: ["'Press Start 2P', sans-serif"],
         rubik: ["Rubik, sans-serif"],
-        serif: ["sans-serif"]
+        serif: ["sans-serif"],
+        baloo: ["'Baloo 2', sans-serif"]
       },
       screens: {
         sm: "640px",
