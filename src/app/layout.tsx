@@ -5,7 +5,7 @@ import ScrollSmooth from "../components/ScrollSmooth";
 import "../styles/index.css";
 import { Providers } from "./providers";
 import { ReactLenis } from "@studio-freight/react-lenis"
-import { Image } from "@nextui-org/react";
+import Image from "next/image";
 import { useLenis } from "@studio-freight/react-lenis";
 
 export default function RootLayout({
@@ -42,7 +42,8 @@ export default function RootLayout({
                     style={{
                       transform: "scaleX(-1)"
                     }}
-                    className="w-12 h-12 rounded-full border-3 border-white" src="./assets/images/K_Logo.webp" alt="K_Logo" />
+                    width={2256} height={2256}
+                    className="w-12 h-12 rounded-full border-3 border-white" src="/assets/images/K_Logo.webp" alt="K_Logo" />
 
                   <div className="flex flex-row justify-center items-center w-auto h-12 bg-white rounded-2xl gap-2 p-1 px-2">
                     <button className="flex md:hidden bg-[#EE7214] h-8 w-24 items-center justify-center rounded-lg text-white font-bold">
