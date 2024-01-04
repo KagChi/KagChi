@@ -1,59 +1,37 @@
 "use client";
-import { RouteBases, CDNRoutes, ImageFormat } from "discord-api-types/v10";
-import { useState, useEffect } from "react";
-import { isBirthday } from "../../components/BirthdayPartyProtocol";
-import { useUser } from "../../states/user";
-import { Image } from "@nextui-org/react";
 
 export default function RootPage() {
-  const user = useUser();
-  const [isVisible, setIsVisible] = useState(!isBirthday);
-
-  useEffect(() => {
-    if (isBirthday) setTimeout(() => setIsVisible(true), 3700);
-  }, []);
-
   return (
     <>
-      <div className="flex px-4">
-        <div className="flex flex-col ml-auto mr-auto justify-center items-center">
-          {user && isVisible && (
-            <>
-              <Image
-                height={128}
-                width={128}
-                isBlurred
-                src={`${RouteBases.cdn}${CDNRoutes.userAvatar(
-                  user.data.discord_user.id,
-                  user.data.discord_user.avatar,
-                  ImageFormat.JPEG,
-                )}?size=4096`}
-                alt="User Avatar"
-              />
+      <div className="flex flex-col">
+        <div className="h-screen w-full bg-fixed bg-cover bg-no-repeat bg-center" style={{
+          backgroundImage: "url('./assets/images/K_Background.webp')"
+        }}>
 
-              <p className="font-bold text-2xl mt-4">
-                {user.data.discord_user.global_name}
-              </p>
-            </>
-          )}
-
-          {
-            !user && isVisible && <>
-              <Image
-                height={128}
-                width={128}
-                isBlurred
-                src={"https://cdn.discordapp.com/avatars/499021389572079620/849cb35fc8da4960a7371bbfb7a4d49d.jpeg?size=4096"}
-                alt="User Avatar"
-              />
-
-              <p className="font-bold text-2xl mt-4">
-                Loading...
-              </p>
-            </>
-          }
-
-          {isVisible && <p>A Fullstack Weeb Developer</p>}
+          <div className="mt-40">
+            <div className="flex flex-col w-full lg:w-1/2 px-6 md:px-12 lg:px-32 gap-4">
+              <div className="flex flex-col w-full justify-center items-center md:justify-none md:items-none">
+                <h3 style={{
+                  textShadow: "0px 6px 6px #A72139"
+                }} className="text-white text-4xl font-bold lg:ml-2 lg:mr-auto">I&apos;am</h3>
+                <h2 style={{
+                  WebkitTextStrokeColor: "#E23C23",
+                  WebkitTextStrokeWidth: "1.5px",
+                  textShadow: "0px 6px 6px #E23C23"
+                }}
+                  className="text-white text-7xl font-bold font-serif">KagChi</h2>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <h2 className="text-white font-bold font-serif" style={{
+                  textShadow: "0px 6px 6px #E23C23"
+                }}
+                >A Fullstack Weeb Developer</h2>
+                <button className="flex bg-[#E23C23] lg:mr-2 w-32 h-8 text-white font-bold rounded-md text-sm items-center justify-center">
+                  &quot;Show Your Work&quot;
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

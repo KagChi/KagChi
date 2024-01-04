@@ -13,7 +13,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        pixel: ["'Press Start 2P', sans-serif"]
+        pixel: ["'Press Start 2P', sans-serif"],
+        rubik: ["Rubik, sans-serif"],
+        serif: ["sans-serif"]
       },
       screens: {
         sm: "640px",
@@ -357,13 +359,13 @@ module.exports = {
           colors: {
             primary: "#FF7000",
             secondary: "#EE457E",
-            background: "#FAE392",
+            background: "#D9D9D9",
           },
         },
         dark: {
           colors: {
             primary: "#F86F03",
-            secondary: "#EE457E",
+            secondary: "#D9D9D9",
           },
         },
       },

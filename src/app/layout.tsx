@@ -2,16 +2,6 @@
 "use client";
 import "../styles/index.css";
 import { Providers } from "./providers";
-import {
-  Image,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
-import Link from "next/link";
-import { ThemeToggler } from "../components/ThemeToggler";
-import { BirthdayPartyProtocol } from "../components/BirthdayPartyProtocol";
 
 export default function RootLayout({
   children,
@@ -31,50 +21,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link href="https://fonts.gstatic.com" rel="preconnect" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css?family=Tilt+Neon&display=swap" rel="stylesheet"  />
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=optional" rel='stylesheet' />
       </head>
       <body>
-        <BirthdayPartyProtocol />
         <Providers>
-          <Navbar as={"div"} isBlurred={false} className="transparent mt-2">
-            <NavbarBrand className="space-x-2">
-              <Image
-                isBlurred
-                src="/assets/images/K_Logo.jpg"
-                alt="logo"
-                height={32}
-                width={32}
-                radius="md"
-              ></Image>
-              <a
-                href="https://www.kagchi.my.id"
-                className="font-bold text-inherit"
-              >
-                KagChi
-              </a>
-            </NavbarBrand>
-            <NavbarContent justify="end">
-              <div className="hidden sm:flex gap-4">
-                <NavbarItem>
-                  <Link color="foreground" href="#">
-                    <p className="font-bold text-inherit">Home</p>
-                  </Link>
-                </NavbarItem>
-                <NavbarItem>
-                  <Link color="foreground" href="#">
-                    <p className="font-bold text-inherit">Contact</p>
-                  </Link>
-                </NavbarItem>
-                <NavbarItem>
-                  <Link href="#" aria-current="page">
-                    <p className="font-bold text-inherit">Blog</p>
-                  </Link>
-                </NavbarItem>
-              </div>
-              <NavbarItem>
-                <ThemeToggler />
-              </NavbarItem>
-            </NavbarContent>
-          </Navbar>
           <main>{children}</main>
         </Providers>
       </body>
