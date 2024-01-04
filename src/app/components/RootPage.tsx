@@ -50,16 +50,16 @@ export default function RootPage() {
                 }} className="w-48 md:w-64 h-auto rounded-lg" alt="K_About" src={"/assets/images/K_About_Background.png"} />
                 <div className="absolute flex flex-col left-28 sm:left-36 md:left-48 bottom-10 gap-2">
                   <div className="flex items-center p-2 rounded-md bg-[#E23C23] w-28 sm:h-8 sm:w-36">
-                    <p className="text-xs sm:text-base">Mobile Developer</p>
+                    <p className="text-xs sm:text-base text-white">Mobile Developer</p>
                   </div>
                   <div className="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-44">
-                    <p className="text-xs sm:text-base">Backend Developer</p>
+                    <p className="text-xs sm:text-base text-white">Backend Developer</p>
                   </div>
                   <div className="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-40">
-                    <p className="text-xs sm:text-base">Frontend Developer</p>
+                    <p className="text-xs sm:text-base text-white">Frontend Developer</p>
                   </div>
                   <div className="flex items-center p-2 rounded-md bg-[#E23C23] w-24 sm:h-8 sm:w-28">
-                    <p className="text-xs sm:text-base">And Others...</p>
+                    <p className="text-xs sm:text-base text-white">And Others...</p>
                   </div>
                 </div>
               </div>
