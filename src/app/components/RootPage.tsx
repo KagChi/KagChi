@@ -36,7 +36,7 @@ export default function RootPage() {
               </div>
             </div>
           </div>
-          <Image className="hidden lg:block w-32 h-32 xl:w-64 xl:h-64 md:bottom-80 lg:bottom-auto md:absolute right-32 rounded-full border-4 border-white" width={2256} height={2256} alt="K_Logo" src={"/assets/images/K_Logo.png"} />
+          <Image className="hidden lg:block w-32 h-32 xl:w-64 xl:h-64 md:bottom-80 lg:bottom-auto md:absolute right-32 rounded-full border-4 border-[#D9D9D9]" width={2256} height={2256} alt="K_Logo" src={"/assets/images/K_Logo.webp"} />
         </div>
         <div className="w-full h-screen xs:mt-72 mt-32 lg:mt-66">
           <svg className="w-full h-auto fill-background" viewBox="0 0 1440 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@ export default function RootPage() {
               <div className="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
                 <Image width={2556} height={4008} style={{
                   transform: "scaleX(-1)"
-                }} className="w-48 md:w-64 h-auto rounded-lg" alt="K_About" src={"/assets/images/K_About_Background.png"} />
+                }} className="w-48 md:w-64 h-auto rounded-lg" alt="K_About" src={"/assets/images/K_About_Background.webp"} />
                 <div className="absolute flex flex-col left-28 sm:left-36 md:left-48 bottom-10 gap-2">
                   <div className="flex items-center p-2 rounded-md bg-[#E23C23] w-28 sm:h-8 sm:w-36">
                     <p className="text-xs sm:text-base text-white">Mobile Developer</p>
