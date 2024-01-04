@@ -17,7 +17,7 @@ export default function RootLayout({
 
   return (
     <ReactLenis root>
-      <html suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
         <style jsx global>
           {`
           html {
