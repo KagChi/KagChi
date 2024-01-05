@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.33",
-    "@studio-freight/react-lenis": "^0.0.39",
+    "@studio-freight/react-lenis": "^0.0.40",
     "canvas-confetti": "^1.6.0",
     "discord-api-types": "^0.37.55",
     "framer-motion": "^10.16.1",
