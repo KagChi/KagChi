@@ -1,4 +1,4 @@
-FROM ghcr.io/hazmi35/node:20-dev-alpine as build-stage
+FROM ghcr.io/hazmi35/node:21-dev-alpine as build-stage
 
 RUN corepack enable && corepack prepare pnpm@latest
 
@@ -13,7 +13,7 @@ RUN pnpm run build
 
 RUN pnpm prune --production
 
-FROM ghcr.io/hazmi35/node:20-alpine
+FROM ghcr.io/hazmi35/node:21-alpine
 
 COPY --from=build-stage /tmp/build/next.config.js ./next.config.js
 COPY --from=build-stage /tmp/build/package.json .
