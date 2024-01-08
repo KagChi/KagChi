@@ -21,7 +21,7 @@ services:
       - "traefik.http.routers.kagchi-web.tls=true"
       - "traefik.http.routers.kagchi-web.tls.options=cloudflare@file"
       - "traefik.http.routers.kagchi-web.middlewares=cloudflare-real-ip@file"
-      - "traefik.http.services.kagchi-web.loadbalancer.server.port=80"
+      - "traefik.http.services.kagchi-web.loadbalancer.server.port=3000"
       - "com.centurylinklabs.watchtower.enable=true"
 
 networks:
