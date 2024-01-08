@@ -21,4 +21,7 @@ COPY --from=build-stage /tmp/build/public ./public
 COPY --from=build-stage /tmp/build/.next/ ./.next
 COPY --from=build-stage /tmp/build/node_modules ./node_modules
 
+ENV NODE_ENV=production \
+    PATH="${PATH}:/app/node_modules/.bin"
+
 CMD ["next", "start"]
