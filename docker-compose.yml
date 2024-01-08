@@ -13,7 +13,7 @@ services:
     networks:
       internet:
         aliases:
-          - web.internet
+          - kagchi-web.internet
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.kagchi-web.rule=Host(`kagchi.my.id`)"
