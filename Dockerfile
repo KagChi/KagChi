@@ -21,4 +21,4 @@ COPY --from=build-stage /tmp/build/node_modules ./node_modules
 COPY --from=build-stage /tmp/build/.next ./.next
 COPY --from=build-stage /tmp/build/next.config.js ./next.config.js
 
-CMD ["node", "-r", "dotenv/config", "dist/index.js"]
+CMD ["pnpm", "start"]
