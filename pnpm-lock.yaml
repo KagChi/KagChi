@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.33
     version: 1.0.33
   '@studio-freight/react-lenis':
-    specifier: ^0.0.40
-    version: 0.0.40(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.0.43
+    version: 0.0.43(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
   canvas-confetti:
     specifier: ^1.9.2
     version: 1.9.2
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^16.3.1
     version: 16.3.1
   framer-motion:
-    specifier: ^10.17.9
-    version: 10.17.9(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^10.17.12
+    version: 10.17.12(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: ^14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^1.6.4
     version: 1.6.4
   '@types/node':
-    specifier: ^20.10.7
-    version: 20.10.7
+    specifier: ^20.10.8
+    version: 20.10.8
   '@types/react':
     specifier: ^18.2.47
     version: 18.2.47
@@ -552,8 +552,8 @@ packages:
     resolution: {integrity: sha512-Pfoimwwsf8oVuneQg3KoigUDlo1S+rE+m2Tz7b+zMNAEi0UAhox+PG/ksLHa8ktQhlsuWODeQFCl8VHBxqOtfw==}
     dev: false
 
-  /@studio-freight/react-lenis@0.0.40(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-LxPK3DtkTZkpnp9AUnNMD6hd5JMI24ZccEogF42s3DJ8vYE9LI7OxEkoWNwa1Um+M0qTHUSEIlIkEySEzF8JIw==}
+  /@studio-freight/react-lenis@0.0.43(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-kgRif4MGcmPWuyIWLBc9ghOIQ/ql7lO2YTIZMv2UCohz37G4fCR8+PLCzJl9/q5iP7481pWdAuFJVYf3xJ/rpg==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -588,8 +588,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node@20.10.7:
-    resolution: {integrity: sha512-fRbIKb8C/Y2lXxB5eVMj4IU7xpdox0Lh8bUPEdtLysaylsml1hOOx1+STloRs/B9nf7C6kPRmmg/V7aQW7usNg==}
+  /@types/node@20.10.8:
+    resolution: {integrity: sha512-f8nQs3cLxbAFc00vEU59yf9UyGUftkPaLGfvbVOIDdx2i1b8epBqj2aNGyP19fiyXWvlmZ7qC1XLjAzw/OKIeA==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -1589,8 +1589,8 @@ packages:
     resolution: {integrity: sha512-n2aZ9tNfYDwaHhvFTkhFErqOMIb8uyzSQ+vGJBjZyanAKZVbGUQ1sngfk9FdkBw7G26O7AgNjLcecLffD1c7eg==}
     dev: true
 
-  /framer-motion@10.17.9(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-z2NpP8r+XuALoPA7ZVZHm/OoTnwkQNJFBu91sC86o/FYvJ4x7ar3eQnixgwYWFK7kEqOtQ6whtNM37tn1KrOOA==}
+  /framer-motion@10.17.12(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-6aaBLN2EgH/GilXwOzEalTfw5Rx9DTQJJjTrxq5bfDbGtPCzXz2GCN6ePGRpTi1ZGugLHxdU273h38ENbcdFKQ==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
