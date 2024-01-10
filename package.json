@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.33",
-    "@studio-freight/react-lenis": "^0.0.40",
+    "@studio-freight/react-lenis": "^0.0.43",
     "canvas-confetti": "^1.9.2",
     "discord-api-types": "^0.37.67",
     "dotenv": "^16.3.1",
-    "framer-motion": "^10.17.9",
+    "framer-motion": "^10.17.12",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -28,7 +28,7 @@
   "version": "3.0.0",
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.4",
-    "@types/node": "^20.10.7",
+    "@types/node": "^20.10.8",
     "@types/react": "^18.2.47",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
