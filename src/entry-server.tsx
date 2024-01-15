@@ -1,7 +1,5 @@
 import { createHandler } from "@solidjs/start/entry";
 import { StartServer } from "@solidjs/start/server";
-import ScrollSmooth from "./components/ScrollSmooth";
-
 
 export default createHandler(() => (
     <StartServer
@@ -14,10 +12,8 @@ export default createHandler(() => (
                     {assets}
                 </head>
                 <body>
-                    <ScrollSmooth>
-                        <div id="app">{children}</div>
-                        {scripts}
-                    </ScrollSmooth>
+                    <div id="app">{children}</div>
+                    {scripts}
                 </body>
             </html>
         )}
