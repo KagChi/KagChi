@@ -1,23 +1,16 @@
-"use client"
+import { JSX, createEffect } from 'solid-js';
+import Lenis from '@studio-freight/lenis';
 
-import Lenis from '@studio-freight/lenis'
-import React, { useEffect } from "react";
-
-export default function ScrollSmooth({ children }: { children: React.ReactNode }) {
-    useEffect(() => {
+export default function ScrollSmooth({ children }: { children: JSX.Element }) {
+    createEffect(() => {
         const lenis = new Lenis();
-
         function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
+            lenis.raf(time)
+            requestAnimationFrame(raf)
         }
 
-        requestAnimationFrame(raf);
-
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
+        requestAnimationFrame(raf)
+    });
 
     return (
         children
