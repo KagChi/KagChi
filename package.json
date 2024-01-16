@@ -1,40 +1,28 @@
 {
-  "name": "kagchi-website",
+  "name": "kagchi",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore ."
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
   "dependencies": {
+    "@solidjs/meta": "^0.29.3",
+    "@solidjs/router": "^0.10.9",
+    "@solidjs/start": "^0.4.9",
     "@studio-freight/lenis": "^1.0.33",
-    "@studio-freight/react-lenis": "^0.0.43",
-    "canvas-confetti": "^1.9.2",
-    "discord-api-types": "^0.37.67",
-    "dotenv": "^16.3.1",
-    "framer-motion": "^10.18.0",
-    "next": "^14.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.4.1",
-    "react-icons": "^4.12.0",
-    "reactish-state": "^0.11.0",
-    "sharp": "^0.33.1",
-    "swr": "^2.2.4"
+    "@vinxi/solid": "0.1.1",
+    "gsap": "^3.12.4",
+    "solid-js": "^1.8.11",
+    "vinxi": "^0.1.4"
   },
   "description": "Just a simple website for my personal website",
   "version": "3.0.0",
   "devDependencies": {
-    "@types/canvas-confetti": "^1.6.4",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
     "postcss": "^8.4.28",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.2",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
@@ -48,8 +36,5 @@
   "bugs": {
     "url": "https://github.com/KagChi/KagChi/issues"
   },
-  "homepage": "https://github.com/KagChi/KagChi#readme",
-  "eslintConfig": {
-    "extends": "next/core-web-vitals"
-  }
+  "homepage": "https://github.com/KagChi/KagChi#readme"
 }

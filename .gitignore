@@ -29,4 +29,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-package-lock.json
+# SolidStart Build Output
+.output
+.vinxi
