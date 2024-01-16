@@ -5,7 +5,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: "256M"
+          memory: "64M"
     restart: unless-stopped
     image: 'ghcr.io/kagchi/kagchi:latest-dev'
     env_file:

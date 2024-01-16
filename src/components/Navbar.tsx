@@ -6,6 +6,7 @@ export const Navbar = ({ lenis }: { lenis: Lenis }) => {
         <>
             <Title>KagChi - Home</Title>
             <Meta name="description" content="I always experiment with new things, it makes me curious. What happens if I create that? I also enjoy creating websites. I can easily grasp the concepts of websites using Tailwind CSS in just 2 months. It&apos;s truly surprising." />
+
             <nav class="absolute px-4 sm:px-10 pt-6 w-full">
                 <div class="flex justify-between ">
                     <img
