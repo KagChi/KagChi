@@ -25,4 +25,4 @@ COPY --from=build-stage /tmp/build/node_modules ./node_modules
 ENV NODE_ENV=production \
     PATH="${PATH}:/app/node_modules/.bin"
 
-CMD ["pnpm", "start"]
+CMD ["vinxi", "start"]
