@@ -32,7 +32,7 @@ export default function Index() {
                                     "-webkit-text-stroke-width": "0.4px",
                                 }}
                                 >A Fullstack Weeb Developer</h2>
-                                <button class="flex bg-[#E23C23] lg:mr-2 w-32 h-8 text-white font-bold rounded-md text-sm items-center justify-center">
+                                <button class="flex bg-[#E23C23] lg:mr-2 h-8 text-white font-bold rounded-md text-sm items-center justify-center px-3 py-1">
                                     &quot;Show Your Work&quot;
                                 </button>
                             </div>
