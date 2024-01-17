@@ -146,7 +146,7 @@ export default function Index() {
                 </div>
             </div>
 
-            <div class="flex flex-col pt-12 bg-[#D9D9D9] w-full">
+            <div class="pt-12 bg-[#D9D9D9] w-full">
                 <img class="w-24 h-24 absolute -mt-[4.5rem] md:-mt-12 left-12 z-50" src="/assets/images/K_Footer.png" />
                 <div class="flex flex-col">
                     <svg class="absolute md:static w-full -mt-2 md:-mt-0" viewBox="0 0 1439 78" fill="none" xmlns="http://www.w3.org/2000/svg">
