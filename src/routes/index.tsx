@@ -104,7 +104,7 @@ export default function Index() {
             </div>
 
             <div class="bg-[#D9D9D9] w-full -mt-4 md:-mt-0">
-                <svg class="w-full" viewBox="0 0 1440 463" fill="#E13F32" xmlns="http://www.w3.org/2000/svg">
+                <svg preserveAspectRatio="none" class="w-full" viewBox="0 0 1440 463" fill="#E13F32" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.10352e-05 0H1440C1440 0 2133.5 350 1440 350C746.5 350 349 -36.5 6.10352e-05 350C-349 736.5 6.10352e-05 0 6.10352e-05 0Z" fill="#E13F32" stroke="#E13F32" />
                 </svg>
             </div>
