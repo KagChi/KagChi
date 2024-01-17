@@ -20,6 +20,7 @@
   "description": "Just a simple website for my personal website",
   "version": "3.0.0",
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.56.0",
     "postcss": "^8.4.33",
