@@ -12,8 +12,8 @@ dependencies:
     specifier: ^0.10.9
     version: 0.10.9(solid-js@1.8.11)
   '@solidjs/start':
-    specifier: ^0.4.9
-    version: 0.4.9(solid-js@1.8.11)(vinxi@0.1.4)(vite@5.0.11)
+    specifier: ^0.4.10
+    version: 0.4.10(solid-js@1.8.11)(vinxi@0.1.4)(vite@5.0.11)
   '@studio-freight/lenis':
     specifier: ^1.0.33
     version: 1.0.33
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^8.4.33
     version: 8.4.33
   prettier:
-    specifier: ^3.2.2
-    version: 3.2.2
+    specifier: ^3.2.4
+    version: 3.2.4
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -1464,12 +1464,12 @@ packages:
       solid-js: 1.8.11
     dev: false
 
-  /@solidjs/start@0.4.9(solid-js@1.8.11)(vinxi@0.1.4)(vite@5.0.11):
-    resolution: {integrity: sha512-+WiNRDjKdEzP45eiF4WLXiuXIohUYk+WZAYiy/qqMJi0BmCkkPUzIXnkYPYwVx3nAyXHMdfUc6/7Xys2qEb+8Q==}
+  /@solidjs/start@0.4.10(solid-js@1.8.11)(vinxi@0.1.4)(vite@5.0.11):
+    resolution: {integrity: sha512-pokRoUm6ZibtgytzIs3OhhsjdfRIXlun7mokSClEStjXMvuHzAGBowuwkxKgOOwsLGFh4nXxp/l+H57EPgQq4A==}
     dependencies:
-      '@vinxi/plugin-directives': 0.1.1(vinxi@0.1.4)
-      '@vinxi/server-components': 0.1.1(vinxi@0.1.4)
-      '@vinxi/server-functions': 0.1.1(vinxi@0.1.4)
+      '@vinxi/plugin-directives': 0.1.2(vinxi@0.1.4)
+      '@vinxi/server-components': 0.1.2(vinxi@0.1.4)
+      '@vinxi/server-functions': 0.1.2(vinxi@0.1.4)
       defu: 6.1.4
       error-stack-parser: 2.1.4
       html-to-image: 1.11.11
@@ -1643,16 +1643,16 @@ packages:
       uqr: 0.1.2
     dev: false
 
-  /@vinxi/plugin-directives@0.1.1(vinxi@0.1.4):
-    resolution: {integrity: sha512-O+ck136VSa1p0YNMvmoM/Ne3pXJZgDDNmF/wXseLASk6fdcBGY4cAb5jFzr+alBXj5sbBKzQsw2fVVFD5gWctA==}
+  /@vinxi/plugin-directives@0.1.2(vinxi@0.1.4):
+    resolution: {integrity: sha512-27WU7fsKt6EfCRPrLX0XN7D7XSbojbDpG7+LG+zjGrFrgRWGnnRnL9+zFMz26mkD4dD3Nxsi1QUB46OR+YyEqA==}
     peerDependencies:
-      vinxi: ^0.1.2
+      vinxi: ^0.1.4
     dependencies:
       '@babel/parser': 7.23.6
-      acorn: 8.10.0
-      acorn-jsx: 5.3.2(acorn@8.10.0)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
@@ -1660,30 +1660,30 @@ packages:
       vinxi: 0.1.4(preact@10.19.3)
     dev: false
 
-  /@vinxi/server-components@0.1.1(vinxi@0.1.4):
-    resolution: {integrity: sha512-67w6jgaEw0cTymdbLCpI5NcL+uZ6nrIjPe9HK+O74eSMJGfQzeecu+FmWpYVhuspqGOsC6UXbuTIkREwrkEnbw==}
+  /@vinxi/server-components@0.1.2(vinxi@0.1.4):
+    resolution: {integrity: sha512-s48B7cNFNMZZp3LddEMw8WKOL/OSHKAI+2oH3rREzdo9UJmByQE962W6Y4Aib1kowdNZWTzg+ukQ/1oavwazlQ==}
     peerDependencies:
-      vinxi: ^0.1.2
+      vinxi: ^0.1.4
     dependencies:
-      '@vinxi/plugin-directives': 0.1.1(vinxi@0.1.4)
-      acorn: 8.10.0
+      '@vinxi/plugin-directives': 0.1.2(vinxi@0.1.4)
+      acorn: 8.11.3
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
       vinxi: 0.1.4(preact@10.19.3)
     dev: false
 
-  /@vinxi/server-functions@0.1.1(vinxi@0.1.4):
-    resolution: {integrity: sha512-hZtT9QaLMtasXH1G2r/kIALuARg3C5lDrv0EPTLln8PvoJmx23hK7NVp9TjNB4oI0VCswiVn25m0CzsnUPnbkA==}
+  /@vinxi/server-functions@0.1.2(vinxi@0.1.4):
+    resolution: {integrity: sha512-KhKn8DnsbTu6Ea1JhXbanet8SBiuEmJ+/FLV3+c5++Z3STg+XkfQodCIzH9T05b3xlh/d40iDOK1gnv2ubqAQg==}
     peerDependencies:
-      vinxi: ^0.1.2
+      vinxi: ^0.1.4
     dependencies:
-      '@vinxi/plugin-directives': 0.1.1(vinxi@0.1.4)
-      acorn: 8.10.0
+      '@vinxi/plugin-directives': 0.1.2(vinxi@0.1.4)
+      acorn: 8.11.3
       acorn-loose: 8.4.0
-      acorn-typescript: 1.4.13(acorn@8.10.0)
+      acorn-typescript: 1.4.13(acorn@8.11.3)
       astring: 1.8.6
       magicast: 0.2.11
       recast: 0.23.4
@@ -1698,12 +1698,12 @@ packages:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
     dev: false
 
-  /acorn-jsx@5.3.2(acorn@8.10.0):
+  /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.10.0
+      acorn: 8.11.3
 
   /acorn-loose@8.4.0:
     resolution: {integrity: sha512-M0EUka6rb+QC4l9Z3T0nJEzNOO7JcoJlYMrBlyBCiFSXRyxjLKayd4TbQs2FDRWQU1h9FR7QVNHt+PEaoNL5rQ==}
@@ -1712,24 +1712,18 @@ packages:
       acorn: 8.11.3
     dev: false
 
-  /acorn-typescript@1.4.13(acorn@8.10.0):
+  /acorn-typescript@1.4.13(acorn@8.11.3):
     resolution: {integrity: sha512-xsc9Xv0xlVfwp2o7sQ+GCQ1PgbkdcpWdTzrwXxO3xDMTAywVS3oXVOcOHuRjAPkS4P9b+yc/qNF15460v+jp4Q==}
     peerDependencies:
       acorn: '>=8.9.0'
     dependencies:
-      acorn: 8.10.0
+      acorn: 8.11.3
     dev: false
-
-  /acorn@8.10.0:
-    resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
 
   /acorn@8.11.3:
     resolution: {integrity: sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: false
 
   /agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -2661,8 +2655,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.10.0
-      acorn-jsx: 5.3.2(acorn@8.10.0)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -4210,8 +4204,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.2.2:
-    resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
+  /prettier@3.2.4:
+    resolution: {integrity: sha512-FWu1oLHKCrtpO1ypU6J0SbK2d9Ckwysq6bHj/uaCP26DxrPpppCLQRGVuqAxSTvhF00AcvDRyYrLNW7ocBhFFQ==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
