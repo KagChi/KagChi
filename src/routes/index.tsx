@@ -7,7 +7,7 @@ export default function Index() {
     const lenis = useLenis();
 
     return (
-        <main>
+        <main class="overflow-x-hidden">
             <Navbar lenis={lenis} />
 
             <div class="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
