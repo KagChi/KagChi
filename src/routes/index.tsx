@@ -54,16 +54,16 @@ export default function Index() {
                                 transform: "scaleX(-1)"
                             }} class="w-48 md:w-64 h-auto rounded-lg" alt="K_About" src={"/assets/images/K_About_Background.webp"} />
                             <div class="absolute flex flex-col left-28 sm:left-36 md:left-48 bottom-10 gap-2">
-                                <div class="flex items-center p-2 rounded-md bg-[#E23C23] w-28 sm:h-8 sm:w-36">
+                                <div data-aos="fade-up" class="flex items-center p-2 rounded-md bg-[#E23C23] w-28 sm:h-8 sm:w-36">
                                     <p class="text-xs sm:text-base text-white">Mobile Developer</p>
                                 </div>
-                                <div class="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-44">
+                                <div data-aos="fade-up" class="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-44">
                                     <p class="text-xs sm:text-base text-white">Backend Developer</p>
                                 </div>
-                                <div class="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-40">
+                                <div data-aos="fade-up" class="flex items-center p-2 rounded-md bg-[#E23C23] w-32 sm:h-8 sm:w-40">
                                     <p class="text-xs sm:text-base text-white">Frontend Developer</p>
                                 </div>
-                                <div class="flex items-center p-2 rounded-md bg-[#E23C23] w-24 sm:h-8 sm:w-28">
+                                <div data-aos="fade-up" class="flex items-center p-2 rounded-md bg-[#E23C23] w-24 sm:h-8 sm:w-28">
                                     <p class="text-xs sm:text-base text-white">And Others...</p>
                                 </div>
                             </div>
