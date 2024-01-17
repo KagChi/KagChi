@@ -6,9 +6,9 @@ export default createHandler(() => (
         document={({ assets, children, scripts }) => (
             <html lang="en">
                 <head>
-                    <link href="https://fonts.googleapis.com/css?family=Tilt+Neon&display=optional" rel='stylesheet' />
-                    <link href="https://fonts.googleapis.com/css?family=Rubik&display=optional" rel='stylesheet' />
-                    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=optional" rel='stylesheet' />
+                    <link href="https://fonts.googleapis.com/css?family=Tilt+Neon" rel='stylesheet' />
+                    <link href="https://fonts.googleapis.com/css?family=Rubik" rel='stylesheet' />
+                    <link href="https://fonts.googleapis.com/css?family=Baloo+2" rel='stylesheet' />
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
                     <meta charset="utf-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />

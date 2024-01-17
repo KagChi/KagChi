@@ -49,7 +49,7 @@ export default function Index() {
             <div class="w-full">
                 <div id="about" class="h-full bg-[#D9D9D9]">
                     <div class="w-full px-6 md:px-20 flex flex-col lg:flex-row pt-10 md:pt-0">
-                        <div class="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
+                        <div data-aos="fade-right" class="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
                             <img width={2556} height={4008} style={{
                                 transform: "scaleX(-1)"
                             }} class="w-48 md:w-64 h-auto rounded-lg" alt="K_About" src={"/assets/images/K_About_Background.webp"} />
@@ -71,11 +71,11 @@ export default function Index() {
 
                         <div class="w-full flex mt-8 md:ml-0">
                             <div class="w-96 flex flex-col ml-auto lg:mr-8 gap-2 px-2 md:px-0">
-                                <div class="flex flex-col">
+                                <div data-aos="fade-up" class="flex flex-col">
                                     <p class="text-[#E23C23] text-5xl md:text-7xl font-bold font-baloo">I Always</p>
                                     <p class="text-[#E23C23] text-2xl sm:text-4xl md:text-5xl font-bold -mt-1 font-baloo">Learn New Stuff</p>
                                 </div>
-                                <div class="flex flex-col gap-6 mt-2 md:mt-0">
+                                <div data-aos="fade-up" class="flex flex-col gap-6 mt-2 md:mt-0">
                                     <p class="inline-block text-[#E23C23]">
                                         I’m Samuel, from Indonesia. I always experiment with new things;
                                         it makes me curious. What happens if I create that? I also enjoy creating websites.
@@ -110,33 +110,33 @@ export default function Index() {
             </div>
 
             <div class="h-96 flex flex-col bg-[#D9D9D9] w-full">
-                <img class="w-20 h-20 md:w-24 md:h-24 absolute right-0 md:right-20" src="/assets/images/K_Hire.png" />
+                <img data-aos="fade-left" class="w-20 h-20 md:w-28 md:h-28 absolute right-0 md:right-20 lg:right-28 z-50" src="/assets/images/K_Hire.png" />
                 <div class="bg-[#D9D9D9] pt-12">
-                    <div class="px-6 md:px-32">
-                        <div class="rounded-lg bg-[#F2522E] w-full h-auto p-2">
-                            <div class="flex flex-col md:flex-row justify-between rounded-lg bg-[#E13D32] w-full h-full py-3 px-6 gap-6 md:gap-0">
+                    <div class="px-6 md:px-28 lg:px-40">
+                        <div data-aos="flip-up" class="rounded-lg bg-[#F2522E] w-full h-auto p-2 md:p-3">
+                            <div class="flex flex-col md:flex-row justify-between rounded-lg bg-[#E13D32] w-full h-full py-4 px-6 md:px-12 gap-6 md:gap-0">
                                 <div class="flex flex-col gap-2">
-                                    <p class="text-white text-2xl font-baloo font-bold">Interested? Hit Me Up !</p>
+                                    <p class="text-white text-2xl md:text-3xl font-baloo font-extrabold">Interested? Hit Me Up !</p>
                                     <div>
-                                        <p class="text-white text-xs font-rubik font-bold">Need some help? Hiring? Find Friends?</p>
-                                        <p class="text-white text-xs font-rubik font-bold">Dont hesistate, i would like too !</p>
+                                        <p class="text-white text-xs md:text-base font-rubik font-bold">Need some help? Hiring? Find Friends?</p>
+                                        <p class="text-white text-xs md:text-base font-rubik font-bold">Dont hesistate, i would like too !</p>
                                     </div>
                                 </div>
 
                                 <div class="flex flex-col gap-4 md:gap-2">
                                     <p class="text-white text-2xl font-baloo font-bold">Contact me at</p>
-                                    <div class="flex bg-[#E9675E] p-2 rounded-full w-full justify-center items-center">
+                                    <div class="flex bg-[#E9675E] p-1 rounded-full w-full justify-center items-center">
                                         <p class="text-white font-bold">me@kagchi.my.id</p>
                                     </div>
                                     <div class="flex flex-row gap-2">
-                                        <div class="flex justify-center items-center p-4 rounded-full w-12 h-12 bg-[#E9675E]">
-                                            <i class="text-white fa-brands fa-github fa-xl"></i>
+                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                            <i class="text-white fa-brands fa-github fa-lg"></i>
                                         </div>
-                                        <div class="flex justify-center items-center p-4 rounded-full w-12 h-12 bg-[#E9675E]">
-                                            <i class="text-white fa-brands fa-github fa-xl"></i>
+                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                            <i class="text-white fa-brands fa-x-twitter fa-lg"></i>
                                         </div>
-                                        <div class="flex justify-center items-center p-4 rounded-full w-12 h-12 bg-[#E9675E]">
-                                            <i class="text-white fa-brands fa-github fa-xl"></i>
+                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                            <i class="text-white fa-brands fa-discord fa-lg"></i>
                                         </div>
                                     </div>
                                 </div>
