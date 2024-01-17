@@ -7,7 +7,7 @@ export default function Index() {
     const lenis = useLenis();
 
     return (
-        <main class="overflow-x-hidden max-w-screen">
+        <main class="overflow-x-hidden">
             <Navbar lenis={lenis} />
 
             <div class="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
@@ -109,7 +109,7 @@ export default function Index() {
                 </svg>
             </div>
 
-            <div class="h-96 flex flex-col bg-[#D9D9D9] w-full">
+            <div class="h-96 flex flex-col bg-[#D9D9D9] w-full relative">
                 <img data-aos="fade-left" class="w-20 h-20 md:w-28 md:h-28 absolute right-0 md:right-20 lg:right-28 z-50" src="/assets/images/K_Hire.png" />
                 <div class="bg-[#D9D9D9] pt-12">
                     <div class="px-6 md:px-28 lg:px-40">
