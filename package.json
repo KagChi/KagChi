@@ -21,7 +21,7 @@
   "version": "3.0.0",
   "devDependencies": {
     "@types/aos": "^3.0.7",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "postcss": "^8.4.33",
     "prettier": "^3.2.4",
