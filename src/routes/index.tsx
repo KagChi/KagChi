@@ -7,38 +7,40 @@ export default function Index() {
     const lenis = useLenis();
 
     return (
-        <main class="overflow-x-hidden">
+        <main class="overflow-x-hidden bg-[#D9D9D9]">
             <Navbar lenis={lenis} />
 
             <div class="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
                 <div class="h-screen w-full relative">
-                    <div class="mt-40">
-                        <div class="flex flex-col w-full lg:w-1/2 px-6 md:px-12 lg:px-32 gap-4">
-                            <div class="flex flex-col w-full justify-center items-center md:justify-none md:items-none">
-                                <h3 style={{
-                                    "text-shadow": "0px 6px 6px #A72139"
-                                }} class="text-white text-2xl sm:text-4xl font-bold mr-52 sm:ml-2 sm:mr-64">I&apos;am</h3>
-                                <h2 style={{
-                                    "-webkit-text-stroke-color": "#E23C23",
-                                    "-webkit-text-stroke-width": "1.5px",
-                                    "text-shadow": "0px 6px 6px #E23C23"
-                                }}
-                                    class="text-white text-6xl sm:text-7xl font-bold font-serif">KagChi</h2>
-                            </div>
-                            <div class="flex flex-col items-center gap-2">
-                                <h2 class="text-white font-bold font-serif" style={{
-                                    "text-shadow": "0px 6px 6px #E23C23",
-                                    "-webkit-text-stroke-color": "#E23C23",
-                                    "-webkit-text-stroke-width": "0.4px",
-                                }}
-                                >A Fullstack Weeb Developer</h2>
-                                <button class="flex bg-[#E23C23] lg:mr-2 h-8 text-white font-bold rounded-md text-sm items-center justify-center px-3 py-1">
-                                    &quot;Show Your Work&quot;
-                                </button>
+                    <div class="container mx-auto">
+                        <div class="mt-40">
+                            <div class="flex flex-col w-full lg:w-1/2 px-6 md:px-12 lg:px-32 gap-4">
+                                <div class="flex flex-col w-full justify-center items-center md:justify-none md:items-none">
+                                    <h3 style={{
+                                        "text-shadow": "0px 6px 6px #A72139"
+                                    }} class="text-white text-2xl sm:text-4xl font-bold mr-52 sm:ml-2 sm:mr-64">I&apos;am</h3>
+                                    <h2 style={{
+                                        "-webkit-text-stroke-color": "#E23C23",
+                                        "-webkit-text-stroke-width": "1.5px",
+                                        "text-shadow": "0px 6px 6px #E23C23"
+                                    }}
+                                        class="text-white text-6xl sm:text-7xl font-bold font-serif">KagChi</h2>
+                                </div>
+                                <div class="flex flex-col items-center gap-2">
+                                    <h2 class="text-white font-bold font-serif" style={{
+                                        "text-shadow": "0px 6px 6px #E23C23",
+                                        "-webkit-text-stroke-color": "#E23C23",
+                                        "-webkit-text-stroke-width": "0.4px",
+                                    }}
+                                    >A Fullstack Weeb Developer</h2>
+                                    <button class="flex bg-[#E23C23] lg:mr-2 h-8 text-white font-bold rounded-md text-sm items-center justify-center px-3 py-1">
+                                        &quot;Show Your Work&quot;
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        <img class="hidden lg:block w-32 h-32 xl:w-64 xl:h-64 md:bottom-80 lg:bottom-10 md:absolute right-32 z-50 rounded-full border-4 border-[#D9D9D9]" width={2256} height={2256} alt="K_Logo" src={"/assets/images/K_Logo.webp"} />
                     </div>
-                    <img class="hidden lg:block w-32 h-32 xl:w-64 xl:h-64 md:bottom-80 lg:bottom-10 md:absolute right-32 z-50 rounded-full border-4 border-[#D9D9D9]" width={2256} height={2256} alt="K_Logo" src={"/assets/images/K_Logo.webp"} />
                     <svg class="w-full absolute -bottom-1 h-auto fill-background" viewBox="0 0 1440 180" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1457 1C865.451 127.15 537.208 170.807 -17 1V179H1457V1Z" fill="#D9D9D9" stroke="#D9D9D9" />
                     </svg>
@@ -46,7 +48,7 @@ export default function Index() {
             </div>
 
 
-            <div class="w-full">
+            <div class="container mx-auto">
                 <div id="about" class="h-full bg-[#D9D9D9]">
                     <div class="w-full px-6 md:px-20 flex flex-col lg:flex-row pt-10 md:pt-0">
                         <div data-aos="fade-right" class="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
@@ -109,7 +111,7 @@ export default function Index() {
                 </svg>
             </div>
 
-            <div class="h-96 flex flex-col bg-[#D9D9D9] w-full relative">
+            <div class="container mx-auto h-96 flex flex-col bg-[#D9D9D9] w-full relative">
                 <img data-aos="fade-left" class="w-20 h-20 md:w-28 md:h-28 absolute right-0 md:right-20 lg:right-28 z-50" src="/assets/images/K_Hire.png" />
                 <div class="bg-[#D9D9D9] pt-12">
                     <div class="px-6 md:px-28 lg:px-40">
@@ -149,12 +151,11 @@ export default function Index() {
             <div class="pt-12 bg-[#D9D9D9] w-full">
                 <img class="w-24 h-24 absolute -mt-[4.5rem] md:-mt-12 left-12 z-50" src="/assets/images/K_Footer.png" />
                 <div class="flex flex-col">
-                    <svg class="absolute md:static w-full -mt-2 md:-mt-0" viewBox="0 0 1439 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-full h-auto" viewBox="0 0 1440 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1438.5 21.4364C849.124 -6.20033 534.933 -5.42113 0 21.4364V192.936H1438.5V21.4364Z" fill="#F2522E" stroke="#F2522E" />
+                        <path d="M1440 41.4432C846.322 13.7973 529.838 14.5767 -9 41.4432V213H1440V41.4432Z" fill="#E13D32" stroke="#E13D32" />
                     </svg>
-                    <svg class=" -mt-2 md:-mt-8 w-full" viewBox="0 0 1440 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1440 21.4432C846.322 -6.20273 529.838 -5.42327 -9 21.4432V193H1440V21.4432Z" fill="#E13D32" stroke="#E13D32" />
-                    </svg>
+
                     <div class="bg-[#E13D32] md:bg-inherit h-auto p-2 px-6 md:-mt-10 flex justify-center items-center">
                         <p class="text-white font-baloo font-bold">
                             Copyright © {new Date().getFullYear()} KagChi
