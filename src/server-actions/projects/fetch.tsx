@@ -24,15 +24,9 @@ function parseRole(role: string) {
 }
 
 export const fetchProjects = action(async () => {
-    "use server";
-    const { config } = await import("@/config");
-    const response = await fetch(`${config.CMS_BASE_SERVER}/items/projects?limit=10`, {
-        headers: {
-            "Authorization": `Bearer ${config.CMS_TOKEN}`
-        }
-    });
+    const response = await fetch(`https://cms.kagchi.my.id/items/projects?limit=10`);
     
     const { data } = await response.json() as { data: Project[] };
 
-    return data.map(x => ({ ...x, image: `${config.CMS_BASE_SERVER}/assets/${x.image}`, role: parseRole(x.role) }));
+    return data.map(x => ({ ...x, image: `https://cms.kagchi.my.id/assets/${x.image}`, role: parseRole(x.role) }));
 })
