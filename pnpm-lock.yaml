@@ -24,8 +24,8 @@ dependencies:
     specifier: ^2.3.4
     version: 2.3.4
   gsap:
-    specifier: ^3.12.4
-    version: 3.12.4
+    specifier: ^3.12.5
+    version: 3.12.5
   solid-js:
     specifier: ^1.8.11
     version: 1.8.11
@@ -3047,8 +3047,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /gsap@3.12.4:
-    resolution: {integrity: sha512-1ByAq8dD0W4aBZ/JArgaQvc0gyUfkGkP8mgAQa0qZGdpOKlSOhOf+WNXjoLimKaKG3Z4Iu6DKZtnyszqQeyqWQ==}
+  /gsap@3.12.5:
+    resolution: {integrity: sha512-srBfnk4n+Oe/ZnMIOXt3gT605BX9x5+rh/prT2F1SsNJsU1XuMiP0E2aptW481OnonOGACZWBqseH5Z7csHxhQ==}
     dev: false
 
   /gzip-size@7.0.0:
