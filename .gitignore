@@ -32,3 +32,6 @@ yarn-error.log*
 # SolidStart Build Output
 .output
 .vinxi
+
+# Environment
+.env

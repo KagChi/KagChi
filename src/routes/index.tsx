@@ -1,10 +1,18 @@
 // @refresh reload
 
+import { Project, fetchProjects } from "@/server-actions/projects/fetch";
 import { Navbar } from "@/components/Navbar";
 import { useLenis } from "@/utilities/Lenis";
+import { useAction } from "@solidjs/router";
+import { createEffect, createSignal } from "solid-js";
 
 export default function Index() {
     const lenis = useLenis();
+    const [projects, setProjects] = createSignal<Project[]>([]);
+
+    createEffect(() => {
+        useAction(fetchProjects)().then(x => setProjects(x));
+    }, [])
 
     return (
         <main class="overflow-x-hidden bg-[#D9D9D9]">
@@ -33,7 +41,7 @@ export default function Index() {
                                         "-webkit-text-stroke-width": "0.4px",
                                     }}
                                     >A Fullstack Weeb Developer</h2>
-                                    <button class="flex bg-[#E23C23] lg:mr-2 h-8 text-white font-bold rounded-md text-sm items-center justify-center px-3 py-1">
+                                    <button onClick={() => lenis && lenis.scrollTo("#projects", { lerp: 0.05 })} class="flex bg-[#E23C23] lg:mr-2 h-8 text-white font-bold rounded-md text-sm items-center justify-center px-3 py-1">
                                         &quot;Show Your Work&quot;
                                     </button>
                                 </div>
@@ -48,7 +56,7 @@ export default function Index() {
             </section>
 
             <section id="about" class="container mx-auto">
-                <div class="h-full md:h-[38rem] bg-[#D9D9D9]">
+                <div class="h-full bg-[#D9D9D9]">
                     <div class="w-full px-6 md:px-20 flex flex-col lg:flex-row pt-10 md:pt-0">
                         <div data-aos="fade-right" class="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
                             <img width={2556} height={4008} style={{
@@ -100,11 +108,43 @@ export default function Index() {
                 </svg>
             </div>
 
-            <section id="projects" class="h-screen bg-[#E13F32] w-full -mb-2">
-                <div class="container mx-auto">
+            <section id="projects" class="h-full bg-[#E13F32] w-full -mb-2">
+                <div class="container mx-auto px-6 md:px-0">
                     <h1 data-aos="zoom-in" class="text-white font-bold text-center text-3xl md:text-7xl">
                         My Projects
                     </h1>
+
+                    <div class=" w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4">
+                        {
+                            projects().map(x => (
+                                <>
+                                    <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
+                                        <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${x.image})` }} />
+
+                                        <div class="flex flex-col px-4 py-2 gap-6">
+                                            <p class="font-bold text-white text-xl">{x.name}</p>
+                                            <p class="text-white">{x.description}</p>
+
+                                            <p class="text-white">{x.role}</p>
+
+                                            <div class="flex flex-row gap-2 pb-2">
+                                                {x.links.length && x.links.slice(0, 4).map(y => (
+                                                    <a href={y}>
+                                                        <i class="text-white fa-solid fa-link fa-lg"></i>
+                                                    </a>
+                                                ))}
+                                                {x.github && (
+                                                    <a href={x.github}>
+                                                        <i class="text-white fa-brands fa-github fa-lg"></i>
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </>
+                            ))
+                        }
+                    </div>
                 </div>
             </section>
 
@@ -134,15 +174,15 @@ export default function Index() {
                                         <p class="text-white font-bold">me@kagchi.my.id</p>
                                     </div>
                                     <div class="flex flex-row gap-2">
-                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                        <a href="https://github.com/KagChi" class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
                                             <i class="text-white fa-brands fa-github fa-lg"></i>
-                                        </div>
-                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                        </a>
+                                        <a href="https://twitter.com/KagChi_2628" class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
                                             <i class="text-white fa-brands fa-x-twitter fa-lg"></i>
-                                        </div>
-                                        <div class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
+                                        </a>
+                                        <a href="https://discord.com/users/499021389572079620" class="flex justify-center items-center p-2 rounded-full w-10 h-10 bg-[#E9675E]">
                                             <i class="text-white fa-brands fa-discord fa-lg"></i>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
