@@ -1,9 +1,31 @@
 import Lenis from "@studio-freight/lenis";
 import { Title, Meta } from "@solidjs/meta";
+import { createSignal } from "solid-js";
 
 export const Navbar = ({ lenis }: { lenis: Lenis }) => {
+    const [section, setSection] = createSignal<string | null>("home");
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const getVisibleSection = () => {
+            const scrollY = window.scrollY;
+            for (const section of sections) {
+                const top = (section as HTMLElement).offsetTop - 350;
+                if (scrollY >= top && scrollY < top + (section as HTMLElement).offsetHeight) {
+                    return section;
+                }
+            }
+            return null;
+        };
+
+        const currentSection = getVisibleSection();
+        if (currentSection) setSection(currentSection.id);
+    });
+
     return (
         <>
+            <script>
+
+            </script>
             <Title>KagChi - Home</Title>
             <Meta name="description" content="I always experiment with new things, it makes me curious. What happens if I create that? I also enjoy creating websites. I can easily grasp the concepts of websites using Tailwind CSS in just 2 months. It&apos;s truly surprising." />
 
@@ -14,21 +36,22 @@ export const Navbar = ({ lenis }: { lenis: Lenis }) => {
                             transform: "scaleX(-1)"
                         }}
                         width={2256} height={2256}
-                        class="w-12 h-12 rounded-full border-2 border-white" src="/assets/images/K_Logo.webp" alt="K_Logo" />
+                        class="hidden md:flex w-12 h-12 rounded-full border-2 border-white" src="/assets/images/K_Logo.webp" alt="K_Logo" />
 
-                    <div class="flex flex-row justify-center items-center w-auto h-12 bg-white rounded-2xl gap-2 p-1 px-2">
-                        <button class="flex md:hidden bg-[#EE7214] h-8 w-24 items-center justify-center rounded-lg text-white font-bold">
-                            Menu
-                        </button>
-                        <button class="hidden md:flex bg-[#EE7214] h-8 w-24 items-center justify-center rounded-lg text-white font-bold">
+                    <div class="flex flex-row justify-between items-center w-full md:w-auto h-12 bg-white rounded-2xl gap-2 p-1 px-2">
+                        <button onClick={() => lenis && lenis.scrollTo("#home", { lerp: 0.05 })} class={`${section() === "home" ? "bg-[#EE7214] text-white" : "text-[#EE7214]"} hover:bg-[#EE7214] hover:text-white h-8 w-20 md:w-24 items-center justify-center rounded-lg font-bold`}>
                             Home
                         </button>
 
-                        <button onClick={() => lenis && lenis.scrollTo("#about", { lerp: 0.05 })} class="hidden md:flex  h-8 w-24 items-center justify-center rounded-lg hover:bg-[#EE7214] text-[#EE7214] hover:text-white font-bold p-1">
-                            About Me
+                        <button onClick={() => lenis && lenis.scrollTo("#about", { lerp: 0.05 })} class={`${section() === "about" ? "bg-[#EE7214] text-white" : "text-[#EE7214]"} hover:bg-[#EE7214] hover:text-white h-8 w-20 md:w-24 items-center justify-center rounded-lg font-bold`}>
+                            About
                         </button>
 
-                        <button class="hidden md:flex  h-8 w-24 items-center justify-center rounded-lg hover:bg-[#EE7214] text-[#EE7214] hover:text-white font-bold p-1">
+                        <button onClick={() => lenis && lenis.scrollTo("#projects", { lerp: 0.05 })} class={`${section() === "projects" ? "bg-[#EE7214] text-white" : "text-[#EE7214]"} hover:bg-[#EE7214] hover:text-white h-8 w-20 md:w-24 items-center justify-center rounded-lg font-bold`}>
+                            Projects
+                        </button>
+
+                        <button onClick={() => lenis && lenis.scrollTo("#contact", { lerp: 0.05 })} class={`${section() === "contact" ? "bg-[#EE7214] text-white" : "text-[#EE7214]"} hover:bg-[#EE7214] hover:text-white h-8 w-20 md:w-24 items-center justify-center rounded-lg font-bold`}>
                             Contact
                         </button>
                     </div>

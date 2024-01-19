@@ -10,7 +10,7 @@ export default function Index() {
         <main class="overflow-x-hidden bg-[#D9D9D9]">
             <Navbar lenis={lenis} />
 
-            <div class="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
+            <section id="home" class="flex flex-col w-full h-screen min-h-screen bg-cover bg-no-repeat bg-center bg-[url('/assets/images/K_Background.webp')]">
                 <div class="h-screen w-full relative">
                     <div class="container mx-auto">
                         <div class="mt-40">
@@ -45,11 +45,10 @@ export default function Index() {
                         <path d="M1457 1C865.451 127.15 537.208 170.807 -17 1V179H1457V1Z" fill="#D9D9D9" stroke="#D9D9D9" />
                     </svg>
                 </div>
-            </div>
+            </section>
 
-
-            <div class="container mx-auto">
-                <div id="about" class="h-full bg-[#D9D9D9]">
+            <section id="about" class="container mx-auto">
+                <div class="h-full md:h-[38rem] bg-[#D9D9D9]">
                     <div class="w-full px-6 md:px-20 flex flex-col lg:flex-row pt-10 md:pt-0">
                         <div data-aos="fade-right" class="relative w-3/5 mr-auto pl-4 md:mr-0 md:pl-0">
                             <img width={2556} height={4008} style={{
@@ -93,7 +92,7 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <div class="bg-[#D9D9D9] pt-10 w-full">
                 <svg preserveAspectRatio="none" class="w-full -mb-1" viewBox="0 0 1440 123" fill="#E13F32" xmlns="http://www.w3.org/2000/svg">
@@ -101,9 +100,13 @@ export default function Index() {
                 </svg>
             </div>
 
-            <div class="h-screen bg-[#E13F32] w-full -mb-2">
-
-            </div>
+            <section id="projects" class="h-screen bg-[#E13F32] w-full -mb-2">
+                <div class="container mx-auto">
+                    <h1 data-aos="zoom-in" class="text-white font-bold text-center text-3xl md:text-7xl">
+                        My Projects
+                    </h1>
+                </div>
+            </section>
 
             <div class="bg-[#D9D9D9] w-full -mt-4 md:-mt-0">
                 <svg class="w-full" viewBox="0 0 1440 463" fill="#E13F32" xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +114,7 @@ export default function Index() {
                 </svg>
             </div>
 
-            <div class="container mx-auto h-96 flex flex-col bg-[#D9D9D9] w-full relative">
+            <section id="contact" class="container mx-auto h-96 flex flex-col bg-[#D9D9D9] w-full relative">
                 <img data-aos="fade-left" class="w-20 h-20 md:w-28 md:h-28 absolute right-0 md:right-20 lg:right-28 z-50" src="/assets/images/K_Hire.png" />
                 <div class="bg-[#D9D9D9] pt-12">
                     <div class="px-6 md:px-28 lg:px-40">
@@ -146,9 +149,9 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="pt-12 bg-[#D9D9D9] w-full">
+            <footer class="pt-12 bg-[#D9D9D9] w-full">
                 <img class="w-24 h-24 absolute -mt-[4.5rem] md:-mt-12 left-12 z-50" src="/assets/images/K_Footer.png" />
                 <div class="flex flex-col">
                     <svg class="w-full h-auto" viewBox="0 0 1440 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +165,7 @@ export default function Index() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </footer>
 
         </main>
     );
