@@ -124,8 +124,7 @@ export default function Index() {
                                         <div class="flex flex-col px-4 py-2 gap-6">
                                             <p class="font-bold text-white text-xl">{x.name}</p>
                                             <p class="text-white">{x.description}</p>
-
-                                            <p class="text-white">{x.role}</p>
+                                            <p class="font-bold text-white">{x.role}</p>
 
                                             <div class="flex flex-row gap-2 pb-2">
                                                 {x.links.length && x.links.slice(0, 4).map(y => (
