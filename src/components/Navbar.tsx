@@ -23,25 +23,6 @@ export const Navbar = ({ lenis }: { lenis: Lenis }) => {
 
     return (
         <>
-            <script>
-
-            </script>
-            <title>Kagchi - Home</title>
-            <meta name="title" content="Kagchi - Home" />
-            <meta name="description" content="I am KagChi, Fullstack Weeb developer. I always experiment with new things, it makes me curious. It's truly surprising." />
-
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://kagchi.my.id/" />
-            <meta property="og:title" content="Kagchi - Home" />
-            <meta property="og:description" content="I am KagChi, Fullstack Weeb developer. I always experiment with new things, it makes me curious. It's truly surprising." />
-            <meta property="og:image" content="https://cms.kagchi.my.id/assets/c4015e1f-5159-480b-b21a-371969dd1c00" />
-
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content="https://kagchi.my.id/" />
-            <meta property="twitter:title" content="Kagchi - Home" />
-            <meta property="twitter:description" content="I am KagChi, Fullstack Weeb developer. I always experiment with new things, it makes me curious. It's truly surprising." />
-            <meta property="twitter:image" content="https://cms.kagchi.my.id/assets/c4015e1f-5159-480b-b21a-371969dd1c00" />
-
             <nav data-aos="fade-down" class="container mx-auto w-full fixed top-0 px-4 inset-x-0 sm:px-10 pt-6 z-[100]">
                 <div class="flex justify-between ">
                     <img
