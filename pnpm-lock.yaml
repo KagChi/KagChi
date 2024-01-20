@@ -15,8 +15,8 @@ dependencies:
     specifier: ^0.4.10
     version: 0.4.10(solid-js@1.8.11)(vinxi@0.1.4)(vite@5.0.11)
   '@studio-freight/lenis':
-    specifier: ^1.0.33
-    version: 1.0.33
+    specifier: ^1.0.34
+    version: 1.0.34
   '@vinxi/solid':
     specifier: 0.1.1
     version: 0.1.1
@@ -1492,8 +1492,8 @@ packages:
       - vite
     dev: false
 
-  /@studio-freight/lenis@1.0.33:
-    resolution: {integrity: sha512-Pfoimwwsf8oVuneQg3KoigUDlo1S+rE+m2Tz7b+zMNAEi0UAhox+PG/ksLHa8ktQhlsuWODeQFCl8VHBxqOtfw==}
+  /@studio-freight/lenis@1.0.34:
+    resolution: {integrity: sha512-sEyzEjfAsTlFgDebMYT5G7tlB0ZHhWkHEoJj0g7W0YYZO093Mh4MU65o1qbNKwRacspdU04ZrA+5Wxwt4dsS7Q==}
     dev: false
 
   /@types/aos@3.0.7:

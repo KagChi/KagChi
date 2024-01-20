@@ -10,7 +10,7 @@
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.10.9",
     "@solidjs/start": "^0.4.10",
-    "@studio-freight/lenis": "^1.0.33",
+    "@studio-freight/lenis": "^1.0.34",
     "@vinxi/solid": "0.1.1",
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
