@@ -18,6 +18,8 @@ export default createHandler(() => (
                     <meta name="title" content="Kagchi - Home" />
                     <meta name="description" content="I am KagChi, Fullstack Weeb developer. I always experiment with new things, it makes me curious. It's truly surprising." />
 
+                    <meta name="theme-color" content="#E13F32" />
+
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content="https://kagchi.my.id/" />
                     <meta property="og:title" content="Kagchi - Home" />
