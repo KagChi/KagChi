@@ -114,7 +114,7 @@ export default function Index() {
                         My Projects
                     </h1>
 
-                    <div class=" w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4">
+                    <div class=" w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4 md:px-14">
                         {
                             projects().map(x => (
                                 <>
