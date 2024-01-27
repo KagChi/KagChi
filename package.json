@@ -8,14 +8,14 @@
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.3",
-    "@solidjs/router": "^0.10.9",
-    "@solidjs/start": "^0.4.10",
+    "@solidjs/router": "^0.10.10",
+    "@solidjs/start": "^0.4.11",
     "@studio-freight/lenis": "^1.0.34",
     "@vinxi/solid": "0.1.1",
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "solid-js": "^1.8.12",
-    "vinxi": "^0.1.4"
+    "vinxi": "^0.1.6"
   },
   "description": "Just a simple website for my personal website",
   "version": "3.0.0",
