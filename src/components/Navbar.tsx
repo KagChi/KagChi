@@ -1,5 +1,4 @@
 import Lenis from "@studio-freight/lenis";
-import { Title, Meta } from "@solidjs/meta";
 import { createSignal } from "solid-js";
 
 export const Navbar = ({ lenis }: { lenis: Lenis }) => {
