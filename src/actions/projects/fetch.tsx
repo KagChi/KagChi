@@ -15,7 +15,6 @@ function parseRole(role: string) {
 }
 
 export const fetchProjects = async () => {
-    "use server";
     const response = await directus.request(
         readItems("projects", {
             limit: 10
