@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@directus/sdk':
+    specifier: ^14.0.0
+    version: 14.0.0
   '@solidjs/meta':
     specifier: ^0.29.3
     version: 0.29.3(solid-js@1.8.11)
@@ -428,6 +431,11 @@ packages:
     resolution: {integrity: sha512-9CB/MKf/wdvbfkUdfrj+OkEwZ5b7rws0eogJ4293h+7b6KX5toPwym+VQKmILafNB9YiehqY0DlNrDcDhdWHSQ==}
     dependencies:
       mime: 3.0.0
+    dev: false
+
+  /@directus/sdk@14.0.0:
+    resolution: {integrity: sha512-xxX20VpdwKXR5O1QNo1HXY3hF8sulOjTdio+zWELLGsSnW4asXT32VLGhiPSl9gtZ2ctSnsrU29k5ACYD2WoRQ==}
+    engines: {node: '>=18.0.0'}
     dev: false
 
   /@esbuild/aix-ppc64@0.19.11:

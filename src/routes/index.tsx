@@ -1,17 +1,18 @@
 // @refresh reload
 
-import { Project, fetchProjects } from "@/server-actions/projects/fetch";
+import { Project } from "@/actions/directus";
+import { fetchProjects } from "@/actions/projects/fetch";
 import { Navbar } from "@/components/Navbar";
 import { useLenis } from "@/utilities/Lenis";
-import { useAction } from "@solidjs/router";
+import { redirect } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
 
-export default function Index() {
+export default function Page() {
     const lenis = useLenis();
     const [projects, setProjects] = createSignal<Project[]>([]);
 
     createEffect(() => {
-        useAction(fetchProjects)().then(x => setProjects(x));
+        fetchProjects().then(x => setProjects(x));
     }, [])
 
     return (
@@ -118,7 +119,7 @@ export default function Index() {
                         {
                             projects().map(x => (
                                 <>
-                                    <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
+                                    <a href={`/projects/${x.id}`} data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
                                         <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${x.image})` }} />
 
                                         <div class="flex flex-col px-4 py-2 gap-6">
@@ -139,7 +140,7 @@ export default function Index() {
                                                 )}
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </>
                             ))
                         }
