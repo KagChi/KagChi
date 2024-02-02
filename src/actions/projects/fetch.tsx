@@ -1,4 +1,4 @@
-import { readItems } from "@directus/sdk";
+import { readItem, readItems } from "@directus/sdk";
 import { directus } from "../directus";
 
 function parseRole(role: string) {
@@ -22,4 +22,12 @@ export const fetchProjects = async () => {
     );
 
     return response.map(x => ({ ...x, image: `https://cms.kagchi.my.id/assets/${x.image}`, role: parseRole(x.role) }));
+}
+
+export const fetchProject = async (id: string) => {
+    const response = await directus.request(
+        readItem("projects", id)
+    );
+
+    return response;
 }

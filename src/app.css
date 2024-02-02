@@ -13,6 +13,7 @@ body {
   --sb-thumb-color: #F2522E;
   --sb-size: 6px;
 
+  background-color: #D9D9D9;
   scrollbar-color: var(--sb-thumb-color) 
                    var(--sb-track-color);
 }
