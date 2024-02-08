@@ -1,12 +1,12 @@
 // @refresh reload
 
-import { Project, fetchProjects } from "@/server-actions/projects/fetch";
+import { Project, fetchProjects } from "@/actions/projects/fetch";
 import { Navbar } from "@/components/Navbar";
 import { useLenis } from "@/utilities/Lenis";
 import { useAction } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
 
-export default function Index() {
+export default function Page() {
     const lenis = useLenis();
     const [projects, setProjects] = createSignal<Project[]>([]);
 
@@ -95,6 +95,12 @@ export default function Index() {
                                         I also wondering to create my own game someday;
                                         it feels incredibly exciting to make your own game !
                                     </p>
+                                </div>
+                                {/* TODO: Add every Holiday, like birthday party ! */}
+                                <div data-aos="fade-up">
+                                    <a href="/lunar" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 flex justify-center items-center p-2 rounded-md bg-[#E23C23] w-48">
+                                        <p class="text-xs sm:text-base text-white">Its Chinese New Year !</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
