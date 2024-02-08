@@ -1,12 +1,13 @@
 // @refresh reload
 
-import { Project, fetchProjects } from "@/server-actions/projects/fetch";
+import { Project, fetchProjects } from "@/actions/projects/fetch";
+import { LoadingState } from "@/components/LoadingState";
 import { Navbar } from "@/components/Navbar";
 import { useLenis } from "@/utilities/Lenis";
 import { useAction } from "@solidjs/router";
-import { createEffect, createSignal } from "solid-js";
+import { Show, createEffect, createSignal } from "solid-js";
 
-export default function Index() {
+export default function Page() {
     const lenis = useLenis();
     const [projects, setProjects] = createSignal<Project[]>([]);
 
@@ -96,6 +97,12 @@ export default function Index() {
                                         it feels incredibly exciting to make your own game !
                                     </p>
                                 </div>
+                                {/* TODO: Add every Holiday, like birthday party ! */}
+                                <div data-aos="fade-up">
+                                    <a href="/lunar" class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 flex justify-center items-center p-2 rounded-md bg-[#E23C23] w-48">
+                                        <p class="text-xs sm:text-base text-white">Its Chinese New Year !</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,41 +116,43 @@ export default function Index() {
             </div>
 
             <section id="projects" class="h-full bg-[#E13F32] w-full -mb-2">
-                <div class="container mx-auto px-6 md:px-0">
+                <div class="container mx-auto px-6 md:px-0 flex flex-col gap-4">
                     <h1 data-aos="zoom-in" class="text-white font-bold text-center text-3xl md:text-7xl">
                         My Projects
                     </h1>
 
-                    <div class=" w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4 md:px-14">
-                        {
-                            projects().map(x => (
-                                <>
-                                    <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
-                                        <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${x.image})` }} />
+                    <Show when={projects().length} fallback={<LoadingState />}>
+                        <div class="w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4 md:px-14">
+                            {
+                                projects().map(x => (
+                                    <>
+                                        <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
+                                            <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${x.image})` }} />
 
-                                        <div class="flex flex-col px-4 py-2 gap-6">
-                                            <p class="font-bold text-white text-xl">{x.name}</p>
-                                            <p class="text-white">{x.description}</p>
-                                            <p class="font-bold text-white">{x.role}</p>
+                                            <div class="flex flex-col px-4 py-2 gap-6">
+                                                <p class="font-bold text-white text-xl">{x.name}</p>
+                                                <p class="text-white">{x.description}</p>
+                                                <p class="font-bold text-white">{x.role}</p>
 
-                                            <div class="flex flex-row gap-2 pb-2">
-                                                {x.links.length && x.links.slice(0, 4).map(y => (
-                                                    <a href={y}>
-                                                        <i class="text-white fa-solid fa-link fa-lg"></i>
-                                                    </a>
-                                                ))}
-                                                {x.github && (
-                                                    <a href={x.github}>
-                                                        <i class="text-white fa-brands fa-github fa-lg"></i>
-                                                    </a>
-                                                )}
+                                                <div class="flex flex-row gap-2 pb-2">
+                                                    {x.links.length && x.links.slice(0, 4).map(y => (
+                                                        <a href={y}>
+                                                            <i class="text-white fa-solid fa-link fa-lg"></i>
+                                                        </a>
+                                                    ))}
+                                                    {x.github && (
+                                                        <a href={x.github}>
+                                                            <i class="text-white fa-brands fa-github fa-lg"></i>
+                                                        </a>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </>
-                            ))
-                        }
-                    </div>
+                                    </>
+                                ))
+                            }
+                        </div>
+                    </Show>
                 </div>
             </section>
 
