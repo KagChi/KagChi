@@ -3,10 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
     start: { 
-        ssr: false,
-        server: {
-            preset: "cloudflare"
-        }
+        ssr: false
     },
     resolve: {
         alias: {
