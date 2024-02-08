@@ -75,7 +75,7 @@ export default function Page() {
                     <a onClick={(e) => {
                         e.preventDefault();
                         generateQris();
-                    }} class="cursor-pointer bg-[#E13F32] px-4 py-2 w-52 rounded-md border-2 justify-center items-center flex">
+                    }} class="cursor-pointer bg-[#E13F32] px-4 py-2 w-full md:w-52 rounded-md border-2 justify-center items-center flex">
                         <p class="text-white font-medium">Kirim Sekarang !</p>
                     </a>
                 </div>
