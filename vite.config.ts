@@ -5,7 +5,7 @@ export default defineConfig({
     start: { 
         ssr: false,
         server: {
-            preset: "cloudflare-pages"
+            preset: "cloudflare"
         }
     },
     resolve: {
