@@ -1,36 +1,27 @@
+import { createInvoice } from "@/actions/invoice";
 import { LoadingState } from "@/components/LoadingState";
-import { Show, createEffect, createSignal } from "solid-js"
+import { useAction } from "@solidjs/router";
+import { Show, createSignal, onMount } from "solid-js"
 
 export default function Page() {
     const [amount, setAmount] = createSignal<number | null>(1000);
     const [pesan, setPesan] = createSignal<string | null>(null);
     const [qris, setQris] = createSignal<string | null>(null);
 
-    const [initialized, setInitialized] = createSignal(false);
-
     const generateQris = () => {
         setQris(null);
-        fetch("/api/createInvoice", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify({
-                amount: amount() ?? 1000,
-                pesan: pesan() ?? "-",
-            })
-        }).then(async res => {
-            const { qris_url } = await res.json();
 
+        useAction(createInvoice)({
+            amount: amount() ?? 1000,
+            message: pesan() ?? "-",
+        }).then(async ({ qris_url }) => {
             setQris(qris_url);
         })
     }
 
-    createEffect(() => {
-        if (initialized()) return;
+    onMount(() => {
         generateQris();
-        setInitialized(true);
-    }, [initialized])
+    })
 
     return (
         <main class="flex flex-col gap-12 overflow-x-hidden bg-[#D9D9D9] min-h-screen">

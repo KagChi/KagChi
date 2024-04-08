@@ -1,8 +1,8 @@
 import { config } from "@/config";
-import type { APIEvent } from "@solidjs/start/server";
+import { action } from "@solidjs/router";
 
-export async function POST(event: APIEvent) {
-    const body = await new Response(event.request.body).json();
+export const createInvoice = action(async (body: { amount: number; message: string; }) => {
+    "use server";
 
     const response = await fetch("https://app.midtrans.com/snap/v1/transactions", {
         method: "POST",
@@ -17,7 +17,7 @@ export async function POST(event: APIEvent) {
             },
             enabled_payments: ["gopay"],
             metadata: {
-                pesan: body.pesan
+                pesan: body.message
             }
         })
     }).then(async (res: Response) => {
@@ -39,4 +39,4 @@ export async function POST(event: APIEvent) {
     })
 
     return response;
-}
+})

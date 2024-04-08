@@ -5,7 +5,7 @@ import { LoadingState } from "@/components/LoadingState";
 import { Navbar } from "@/components/Navbar";
 import { useLenis } from "@/utilities/Lenis";
 import { useAction } from "@solidjs/router";
-import { Show, createEffect, createSignal } from "solid-js";
+import { For, Show, createEffect, createSignal } from "solid-js";
 
 export default function Page() {
     const lenis = useLenis();
@@ -123,34 +123,31 @@ export default function Page() {
 
                     <Show when={projects().length} fallback={<LoadingState />}>
                         <div class="w-full mt-12 columns-1 md:columns-2 lg:columns-4 pb-4 md:px-14">
-                            {
-                                projects().map(x => (
-                                    <>
-                                        <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
-                                            <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${x.image})` }} />
+                            <For each={projects()}>
+                                {data => <div data-aos="fade-up" class="flex flex-col bg-[#bf372e] h-full rounded-xl gap-4 mb-4 break-inside-avoid-column">
+                                            <div class={`w-full object-cover h-28 rounded-t-xl bg-fixed bg-cover`} style={{ "background-image": `url(${data.image})` }} />
 
                                             <div class="flex flex-col px-4 py-2 gap-6">
-                                                <p class="font-bold text-white text-xl">{x.name}</p>
-                                                <p class="text-white">{x.description}</p>
-                                                <p class="font-bold text-white">{x.role}</p>
+                                                <p class="font-bold text-white text-xl">{data.name}</p>
+                                                <p class="text-white">{data.description}</p>
+                                                <p class="font-bold text-white">{data.role} ({data.own_project ? "Self Project" : "Developer"})</p>
 
                                                 <div class="flex flex-row gap-2 pb-2">
-                                                    {x.links.length && x.links.slice(0, 4).map(y => (
+                                                    {data.links.length && data.links.slice(0, 4).map(y => (
                                                         <a href={y}>
                                                             <i class="text-white fa-solid fa-link fa-lg"></i>
                                                         </a>
                                                     ))}
-                                                    {x.github && (
-                                                        <a href={x.github}>
+                                                    {data.github && (
+                                                        <a href={data.github}>
                                                             <i class="text-white fa-brands fa-github fa-lg"></i>
                                                         </a>
                                                     )}
                                                 </div>
                                             </div>
                                         </div>
-                                    </>
-                                ))
-                            }
+                                    }
+                            </For>
                         </div>
                     </Show>
                 </div>

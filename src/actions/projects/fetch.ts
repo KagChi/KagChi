@@ -8,6 +8,7 @@ export interface Project {
     role: string;
     github: string;
     links: string[];
+    own_project: boolean;
 }
 
 function parseRole(role: string) {
@@ -24,6 +25,7 @@ function parseRole(role: string) {
 }
 
 export const fetchProjects = action(async () => {
+    "use server";
     const response = await fetch(`https://cms.kagchi.my.id/items/projects?limit=10`);
     
     const { data } = await response.json() as { data: Project[] };

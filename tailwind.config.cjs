@@ -6,6 +6,9 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    container: {
+      center: true
+    },
     extend: {
       fontFamily: {
         pixel: ["'Press Start 2P', sans-serif"],
