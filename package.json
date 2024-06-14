@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.4.0",
+    "eslint": "^9.5.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.3",
