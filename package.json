@@ -1,33 +1,65 @@
 {
   "name": "kagchi",
   "private": true,
-  "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start"
-  },
-  "dependencies": {
-    "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.13.6",
-    "@solidjs/start": "^1.0.2",
-    "@studio-freight/lenis": "^1.0.42",
-    "@vinxi/solid": "0.1.1",
-    "aos": "^2.3.4",
-    "gsap": "^3.12.5",
-    "solid-js": "^1.8.17",
-    "vinxi": "^0.3.12"
-  },
   "type": "module",
   "description": "Just a simple website for my personal website",
-  "version": "3.0.0",
+  "version": "4.0.0",
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.7.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.12",
+    "lucide-react": "^0.399.0",
+    "next": "14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^9.5.0",
+    "@hazmi35/eslint-config": "^12.0.0",
+    "@next/eslint-plugin-next": "^14.2.4",
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.4",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": [
+      "@hazmi35/eslint-config/typescript",
+      "plugin:tailwindcss/recommended",
+      "next"
+    ],
+    "rules": {
+      "tailwindcss/no-custom-classname": [
+        "error",
+        {
+          "whitelist": [
+            "fa-.*"
+          ]
+        }
+      ],
+      "@typescript-eslint/naming-convention": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
+      "max-lines": "off"
+    }
   },
   "repository": {
     "type": "git",

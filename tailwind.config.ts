@@ -1,21 +1,23 @@
-module.exports = {
-  mode: "jit",
+import type { Config } from "tailwindcss"
+
+const config = {
+  darkMode: ["class"],
   content: [
-    "./src/components/**/*.tsx",
-    "./src/**/*.tsx"
-  ],
-  darkMode: "class",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
+  prefix: "",
   theme: {
     container: {
-      center: true
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
     },
     extend: {
-      fontFamily: {
-        pixel: ["'Press Start 2P', sans-serif"],
-        rubik: ["Rubik, sans-serif"],
-        serif: ["sans-serif"],
-        baloo: ["'Baloo 2', sans-serif"]
-      },
       screens: {
         sm: "640px",
         // => @media (min-width: 640px) { ... }
@@ -326,29 +328,51 @@ module.exports = {
           900: "#3e2723",
         },
       },
-      spacing: {
-        7: "1.75rem",
-        9: "2.25rem",
-        28: "7rem",
-        80: "20rem",
-        96: "24rem",
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "shine-pulse": {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0deg)' },
+          '10%': { transform: 'rotate(14deg)' },
+          '20%': { transform: 'rotate(-8deg)' },
+          '30%': { transform: 'rotate(14deg)' },
+          '40%': { transform: 'rotate(-4deg)' },
+          '50%': { transform: 'rotate(10deg)' },
+          '60%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
       },
-      height: {
-        "1/2": "50%",
-      },
-      scale: {
-        30: ".3",
-      },
-      boxShadow: {
-        outline: "0 0 0 3px rgba(101, 31, 255, 0.4)",
+      animation: {
+        gradient: "gradient 8s linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        wave: 'wave 2.5s infinite',
       },
     },
   },
-  variants: {
-    scale: ["responsive", "hover", "focus", "group-hover"],
-    textColor: ["responsive", "hover", "focus", "group-hover"],
-    opacity: ["responsive", "hover", "focus", "group-hover"],
-    backgroundColor: ["responsive", "hover", "focus", "group-hover"],
-  },
-  plugins: [],
-};
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config
