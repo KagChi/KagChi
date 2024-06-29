@@ -1,5 +1,3 @@
-"use server";
-
 import { fetchProjects } from "@/actions/projects";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import BlurIn from "@/components/magicui/blur-in";
