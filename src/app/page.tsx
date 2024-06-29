@@ -4,8 +4,7 @@ import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/icons-react";
-import { Github, Globe } from "lucide-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconGlobe } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -70,14 +69,14 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Globe size={12} />
+                                            <IconGlobe size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
 
                                     {x.github && <Link href={x.github} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Github size={12} />
+                                            <IconBrandGithub size={12} />
                                             Source
                                         </Badge>
                                     </Link>}
@@ -115,14 +114,14 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Globe size={12} />
+                                            <IconGlobe size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
 
                                     {x.github && <Link href={x.github} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Github size={12} />
+                                            <IconBrandGithub size={12} />
                                             Source
                                         </Badge>
                                     </Link>}
@@ -161,14 +160,14 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Globe size={12} />
+                                            <IconGlobe size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
 
                                     {x.github && <Link href={x.github} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <Github size={12} />
+                                            <IconBrandGithub size={12} />
                                             Source
                                         </Badge>
                                     </Link>}
