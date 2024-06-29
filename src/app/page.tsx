@@ -1,13 +1,17 @@
+"use server";
+
 import { fetchProjects } from "@/actions/projects";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandDiscord, IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/icons-react";
 import { Github, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+
+export const runtime = "edge";
 
 export default async function Home() {
     const projects = await fetchProjects();
