@@ -48,8 +48,8 @@ export default async function Home() {
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
                         <p className="text-sm">
-                            I take on commissions for web development, delivering high-quality websites that not only look great but also perform seamlessly. 
-                            Below are some examples of my work, showcasing my ability to translate client visions into functional, aesthetically pleasing websites. 
+                            I take on commissions for web development, delivering high-quality websites that not only look great but also perform seamlessly.
+                            Below are some examples of my work, showcasing my ability to translate client visions into functional, aesthetically pleasing websites.
                             Each project highlights my commitment to excellence, attention to detail, and dedication to client satisfaction.
                         </p>
                     </div>
@@ -57,7 +57,7 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) => 
+                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
@@ -70,7 +70,7 @@ export default async function Home() {
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
                         <p className="text-sm">
-                            In my self-initiated projects, I explore and experiment with various aspects of web development to continually improve my skills and stay current with industry trends. 
+                            In my self-initiated projects, I explore and experiment with various aspects of web development to continually improve my skills and stay current with industry trends.
                             These projects are a testament to my dedication and passion for coding, allowing me to push the boundaries of creativity and technical proficiency.
                         </p>
                     </div>
@@ -78,7 +78,7 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) => 
+                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
@@ -91,8 +91,8 @@ export default async function Home() {
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
                         <p className="text-sm">
-                            In addition to my professional and self-initiated projects, I have dedicated time to various volunteer projects. 
-                            These opportunities have allowed me to contribute my skills to meaningful causes, 
+                            In addition to my professional and self-initiated projects, I have dedicated time to various volunteer projects.
+                            These opportunities have allowed me to contribute my skills to meaningful causes,
                             support community initiatives, and collaborate with diverse teams.
                         </p>
                     </div>
@@ -100,16 +100,16 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) => 
+                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
                 </div>
             </BlurIn>
 
-            <BlurIn className="mt-12">
+            <BlurIn className="mt-12 mb-20">
                 <div className="border border-gray-900 rounded-md px-6 py-2 flex flex-col md:flex-row justify-between">
-                    <div className="flex flex-col justify-center w-1/2">
+                    <div className="flex flex-col justify-center md:w-1/2">
                         <p className="text-xl font-bold">Interested? Hit Me Up!</p>
                         <p className="text-sm text-gray-500">Need help? Looking to hire? Want to make new friends? Don't hesitate, I'd love to assist!</p>
                     </div>
@@ -152,9 +152,9 @@ export default async function Home() {
                     </div>
                 </div>
             </BlurIn>
-            
+
             <BlurIn>
-                <footer className="mt-12 w-full text-center pb-4">
+                <footer className="mt-14 w-full text-center pb-4">
                     <p className="font-bold text-xs">Copyright © 2024 KagChi</p>
                 </footer>
             </BlurIn>
