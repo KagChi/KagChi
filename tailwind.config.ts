@@ -358,6 +358,14 @@ const config = {
           '60%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(0deg)' },
         },
+        up: {
+          from: {
+            transform: "translateY(-6px)"
+          },
+          to: {
+            transform: "translateZ(opx)"
+          }
+        },
         gradient: {
           to: {
             backgroundPosition: "var(--bg-size) 0",
