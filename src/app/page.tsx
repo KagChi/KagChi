@@ -189,7 +189,7 @@ export default async function Home() {
                     </div>
 
                     <div className="mt-2 md:mt-0 md:text-center">
-                        <p className="text-xl font-bold md:-ml-0.1">Get In Touch</p>
+                        <p className="text-xl font-bold md:-ml-1">Get In Touch</p>
 
                         <div className="flex flex-col gap-1">
                             <AnimatedGradientText>
