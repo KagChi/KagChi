@@ -20,7 +20,7 @@ export default async function Home() {
                 <div className="flex flex-row gap-4 md:gap-8">
                     <div className="inline-block max-w-[600px]">
                         <p className="font-bold text-2xl md:text-5xl">Hi, I'm KagChi 😁</p>
-                        <p className="text-gray-300 md:text-lg mt-1">Fullstack Weeb Engineer, I love building things. doesnt like Theory. curious with things. very active at Discord.</p>
+                        <p className="text-gray-500 md:text-lg mt-1">Fullstack Weeb Engineer, I love building things. doesnt like Theory. curious with things. very active at Discord.</p>
                     </div>
                     <Image className="size-28 rounded-full" src="/assets/images/K_Logo.webp" width={256} height={256} alt="Logo Profile" />
                 </div>
@@ -42,7 +42,7 @@ export default async function Home() {
 
                 <BlurIn className="text-base mt-6">
                     <p className="text-6xl font-bold">Hi <span className="animate-wave inline-block transform origin-bottom-right">👋</span></p>
-                    <p className="mt-1">I'm Samuel. from Jakarta, Indonesia. At the end of 2019, I became curious about programming, particularly how Discord bots are created. This curiosity led me on a journey that has transformed me into a web developer today</p>
+                    <p className="mt-1 text-gray-500">I'm Samuel. from Jakarta, Indonesia. At the end of 2019, I became curious about programming, particularly how Discord bots are created. This curiosity led me on a journey that has transformed me into a web developer today</p>
                 </BlurIn>
             </div>
 
@@ -51,7 +51,7 @@ export default async function Home() {
                     <Badge className="w-fit">Commisioned Projects</Badge>
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm">
+                        <p className="text-sm text-gray-500">
                             I take on commissions for web development, delivering high-quality websites that not only look great but also perform seamlessly.
                             Below are some examples of my work, showcasing my ability to translate client visions into functional, aesthetically pleasing websites.
                             Each project highlights my commitment to excellence, attention to detail, and dedication to client satisfaction.
@@ -73,7 +73,7 @@ export default async function Home() {
                     <Badge className="w-fit">Self Projects</Badge>
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm">
+                        <p className="text-sm text-gray-500">
                             In my self-initiated projects, I explore and experiment with various aspects of web development to continually improve my skills and stay current with industry trends.
                             These projects are a testament to my dedication and passion for coding, allowing me to push the boundaries of creativity and technical proficiency.
                         </p>
@@ -94,7 +94,7 @@ export default async function Home() {
                     <Badge className="w-fit">Volunteer Projects</Badge>
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm">
+                        <p className="text-sm text-gray-500">
                             In addition to my professional and self-initiated projects, I have dedicated time to various volunteer projects.
                             These opportunities have allowed me to contribute my skills to meaningful causes,
                             support community initiatives, and collaborate with diverse teams.
