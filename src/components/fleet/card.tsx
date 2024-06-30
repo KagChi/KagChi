@@ -5,32 +5,35 @@ import { Badge } from "../ui/badge";
 
 export function Card({ image, website, name, description, github }: Project) {
     return (
-        <div className="flex flex-col h-full rounded-md mb-4">
-            <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${image})` }} />
-
-            <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
-                <div>
-                    <p className="font-bold">{name}</p>
-                    <p className="text-xs text-gray-500">{description}</p>
-                </div>
-
-
-                <div className="mt-auto flex flex-row gap-2">
-                    {website && <Link href={website} className="hover:opacity-60">
-                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                            <IconWorld size={12} />
-                            Website
-                        </Badge>
-                    </Link>}
-
-                    {github && <Link href={github} className="hover:opacity-60">
-                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                            <IconBrandGithub size={12} />
-                            Source
-                        </Badge>
-                    </Link>}
+        <div className="relative block cursor-pointer h-full group">
+            <div className="absolute inset-0 rounded-md border-2 border-dashed border-orange-200 transition-transform transform opacity-0 group-hover:opacity-100 pointer-events-none" />
+            <div className="flex flex-col h-full rounded-md mb-4 transition-transform transform group-hover:-translate-x-2 group-hover:-translate-y-2 bg-black">
+                <div className="w-full h-28 bg-cover rounded-t-md" style={{ backgroundImage: `url(${image})` }} />
+                <div className="border border-gray-900 rounded-b-md py-2 px-4 flex-grow flex flex-col gap-4">
+                    <div>
+                        <p className="font-bold">{name}</p>
+                        <p className="text-xs text-gray-500">{description}</p>
+                    </div>
+                    <div className="mt-auto flex gap-2">
+                        {website && (
+                            <Link href={website} className="hover:opacity-60">
+                                <Badge className="flex gap-2 w-fit rounded-md">
+                                    <IconWorld size={12} />
+                                    Website
+                                </Badge>
+                            </Link>
+                        )}
+                        {github && (
+                            <Link href={github} className="hover:opacity-60">
+                                <Badge className="flex gap-2 w-fit rounded-md">
+                                    <IconBrandGithub size={12} />
+                                    Source
+                                </Badge>
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
