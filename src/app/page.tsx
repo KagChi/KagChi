@@ -4,7 +4,7 @@ import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconGlobe, IconWorld } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconWorld } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
