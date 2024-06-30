@@ -118,31 +118,33 @@ export default async function Home() {
                         <p className="text-xl font-bold md:-ml-1">Get In Touch</p>
 
                         <div className="flex flex-col gap-1">
-                            <AnimatedGradientText>
-                                <span
-                                    className={cn(
-                                        `font-bold inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-                                    )}
-                                >
-                                    me@kagchi.my.id
-                                </span>
-                            </AnimatedGradientText>
+                            <Link href={"mailto:me@kagchi.my.id"}>
+                                <AnimatedGradientText className="hover:opacity-60">
+                                    <span
+                                        className={cn(
+                                            `font-bold inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+                                        )}
+                                    >
+                                        me@kagchi.my.id
+                                    </span>
+                                </AnimatedGradientText>
+                            </Link>
 
                             <div className="flex flex-row gap-3 lg:gap-0 lg:justify-between">
                                 <Link href={"https://github.com/KagChi"}>
-                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="size-10 items-center justify-center" borderRadius={2000}>
+                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="hover:opacity-60 size-10 items-center justify-center" borderRadius={2000}>
                                         <IconBrandGithub />
                                     </ShineBorder>
                                 </Link>
 
                                 <Link href={"https://discord.com/users/499021389572079620"}>
-                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="size-10 items-center justify-center" borderRadius={2000}>
+                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="hover:opacity-60 size-10 items-center justify-center" borderRadius={2000}>
                                         <IconBrandDiscordFilled />
                                     </ShineBorder>
                                 </Link>
 
                                 <Link href={"https://twitter.com/KagChi_2628"}>
-                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="size-10 items-center justify-center" borderRadius={2000}>
+                                    <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="hover:opacity-60 size-10 items-center justify-center" borderRadius={2000}>
                                         <IconBrandX />
                                     </ShineBorder>
                                 </Link>
