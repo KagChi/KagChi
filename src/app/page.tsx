@@ -107,7 +107,8 @@ export default async function Home() {
                 </div>
             </BlurIn>
 
-            <BlurIn className="mt-12 mb-20">
+            <BlurIn className="mt-12 mb-20 relative">
+                <Image className="size-16 md:size-20 absolute -right-6 -top-8 md:-right-8 md:-top-10 z-50" src={"/assets/images/K_Hire.svg"} width={512} height={512} alt="Logo" />
                 <div className="border border-gray-900 rounded-md px-6 py-2 flex flex-col md:flex-row justify-between">
                     <div className="flex flex-col justify-center md:w-1/2">
                         <p className="text-xl font-bold">Interested? Hit Me Up!</p>
