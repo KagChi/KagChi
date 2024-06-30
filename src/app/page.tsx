@@ -91,6 +91,27 @@ export default async function Home() {
 
             <BlurIn className="mt-12 flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
+                    <Badge className="w-fit">Hobby Projects</Badge>
+                    <div className="flex flex-col gap-3">
+                        <h1 className="text-4xl font-bold">Checkout my latest work</h1>
+                        <p className="text-sm text-gray-500">
+                            As an IT enthusiast and web developer with a passion for exploring new technologies, my hobby projects are a reflection of my curiosity and creativity. 
+                            These projects range from innovative web applications to interactive Discord bots, each crafted with a blend of technical expertise and a love for problem-solving.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 gap-x-6">
+                    {
+                        projects.filter(x => x.type === "hobby").length >= 1 && projects.filter(x => x.type === "hobby").map((x, i) =>
+                            <Card {...x} key={i} />
+                        )
+                    }
+                </div>
+            </BlurIn>
+
+            <BlurIn className="mt-12 flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
                     <Badge className="w-fit">Volunteer Projects</Badge>
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
