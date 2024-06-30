@@ -12,7 +12,7 @@ export default async function Blog() {
             </BlurIn>
 
             <BlurIn className="mt-12">
-                <p>There are not blogs as for now...</p>
+                <p>There are no blogs as for now...</p>
             </BlurIn>
         </main>
     );
