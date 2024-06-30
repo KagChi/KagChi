@@ -180,7 +180,7 @@ export default async function Home() {
 
             <BlurIn className="mt-12">
                 <div className="border border-gray-900 rounded-md px-6 py-2 flex flex-col md:flex-row justify-between">
-                    <div>
+                    <div className="flex flex-col justify-center">
                         <p className="text-xl font-bold">Interested? Hit Me Up!</p>
                         <div className="text-sm text-gray-500">
                             <p>Need some help? Hiring? Find Friends?</p>

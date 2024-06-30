@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         url: "https://kagchi.my.id",
-        title: "KagChi- Home",
+        title: "KagChi - Home",
         description: "I am KagChi, Fullstack Weeb developer. I Love building things. Very active at Discord",
     },
     icons: [
