@@ -4,7 +4,7 @@ import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconGlobe } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconGlobe, IconWorld } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -56,7 +56,7 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map(x => <div className="flex flex-col h-full rounded-md mb-4">
+                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
                             <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
 
                             <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
@@ -69,7 +69,7 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconGlobe size={12} />
+                                            <IconWorld size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
@@ -101,7 +101,7 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map(x => <div className="flex flex-col h-full rounded-md mb-4">
+                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
                             <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
 
                             <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
@@ -114,7 +114,7 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconGlobe size={12} />
+                                            <IconWorld size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
@@ -147,7 +147,7 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map(x => <div className="flex flex-col h-full rounded-md mb-4">
+                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
                             <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
 
                             <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
@@ -160,7 +160,7 @@ export default async function Home() {
                                 <div className="mt-auto flex flex-row gap-2">
                                     {x.website && <Link href={x.website} className="hover:opacity-60">
                                         <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconGlobe size={12} />
+                                            <IconWorld size={12} />
                                             Website
                                         </Badge>
                                     </Link>}
@@ -189,7 +189,7 @@ export default async function Home() {
                     </div>
 
                     <div className="mt-2 md:mt-0 md:text-center">
-                        <p className="text-xl font-bold">Get In Touch</p>
+                        <p className="text-xl font-bold md:-ml-0.1">Get In Touch</p>
 
                         <div className="flex flex-col gap-1">
                             <AnimatedGradientText>
