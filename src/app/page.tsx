@@ -115,9 +115,9 @@ export default async function Home() {
                     </div>
 
                     <div className="mt-2 md:mt-0 md:text-center">
-                        <p className="text-xl font-bold md:-ml-1">Get In Touch</p>
+                        <p className="text-4xl font-bold md:text-xl md:-ml-1">Get In Touch</p>
 
-                        <div className="flex flex-col gap-1">
+                        <div className="flex items-center flex-row justify-between gap-1 md:justify-start md:flex-col">
                             <Link href={"mailto:me@kagchi.my.id"}>
                                 <AnimatedGradientText className="hover:opacity-60">
                                     <span
@@ -130,7 +130,7 @@ export default async function Home() {
                                 </AnimatedGradientText>
                             </Link>
 
-                            <div className="flex flex-row gap-3 lg:gap-0 lg:justify-between">
+                            <div className="flex flex-row gap-3 lg:justify-between">
                                 <Link href={"https://github.com/KagChi"}>
                                     <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="hover:opacity-60 size-10 items-center justify-center" borderRadius={2000}>
                                         <IconBrandGithub />
