@@ -12,7 +12,7 @@ interface BlurIntProps {
   duration?: number;
 }
 
-const BlurIn = ({ children, className, variant, duration = 1 }: BlurIntProps) => {
+const BlurIn = ({ children, className, variant, duration = 0.5 }: BlurIntProps) => {
   const defaultVariants = {
     hidden: { filter: "blur(10px)", opacity: 0, y: 10 },
     visible: { filter: "blur(0px)", opacity: 1, y: 0 },
