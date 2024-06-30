@@ -1,10 +1,11 @@
 import { fetchProjects } from "@/actions/projects";
+import { Card } from "@/components/fleet/card";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX, IconWorld } from "@tabler/icons-react";
+import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -56,33 +57,9 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
-                            <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
-
-                            <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
-                                <div>
-                                    <p className="font-bold">{x.name}</p>
-                                    <p className="text-xs text-gray-500">{x.description}</p>    
-                                </div>
-
-                                
-                                <div className="mt-auto flex flex-row gap-2">
-                                    {x.website && <Link href={x.website} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconWorld size={12} />
-                                            Website
-                                        </Badge>
-                                    </Link>}
-
-                                    {x.github && <Link href={x.github} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconBrandGithub size={12} />
-                                            Source
-                                        </Badge>
-                                    </Link>}
-                                </div>
-                            </div>
-                        </div>)
+                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) => 
+                            <Card {...x} key={i} />
+                        )
                     }
                 </div>
             </BlurIn>
@@ -101,33 +78,9 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
-                            <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
-
-                            <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
-                                <div>
-                                    <p className="font-bold">{x.name}</p>
-                                    <p className="text-xs text-gray-500">{x.description}</p>    
-                                </div>
-
-                                
-                                <div className="mt-auto flex flex-row gap-2">
-                                    {x.website && <Link href={x.website} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconWorld size={12} />
-                                            Website
-                                        </Badge>
-                                    </Link>}
-
-                                    {x.github && <Link href={x.github} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconBrandGithub size={12} />
-                                            Source
-                                        </Badge>
-                                    </Link>}
-                                </div>
-                            </div>
-                        </div>)
+                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) => 
+                            <Card {...x} key={i} />
+                        )
                     }
                 </div>
             </BlurIn>
@@ -147,33 +100,9 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) => <div key={i} className="flex flex-col h-full rounded-md mb-4">
-                            <div className={`w-full object-cover h-28 rounded-t-md bg-cover`} style={{ backgroundImage: `url(${x.image})` }} />
-
-                            <div className="border-r border-l border-b rounded-b border-gray-900 py-2 px-4 flex-grow flex flex-col gap-4">
-                                <div>
-                                    <p className="font-bold">{x.name}</p>
-                                    <p className="text-xs text-gray-500">{x.description}</p>    
-                                </div>
-
-                                
-                                <div className="mt-auto flex flex-row gap-2">
-                                    {x.website && <Link href={x.website} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconWorld size={12} />
-                                            Website
-                                        </Badge>
-                                    </Link>}
-
-                                    {x.github && <Link href={x.github} className="hover:opacity-60">
-                                        <Badge className="flex flex-row gap-2 w-fit rounded-md">
-                                            <IconBrandGithub size={12} />
-                                            Source
-                                        </Badge>
-                                    </Link>}
-                                </div>
-                            </div>
-                        </div>)
+                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) => 
+                            <Card {...x} key={i} />
+                        )
                     }
                 </div>
             </BlurIn>
