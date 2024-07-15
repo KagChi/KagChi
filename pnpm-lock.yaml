@@ -40,7 +40,7 @@ importers:
         version: 2.4.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.4)
+        version: 1.0.7(tailwindcss@3.4.5)
     devDependencies:
       '@hazmi35/eslint-config':
         specifier: ^12.0.0
@@ -68,13 +68,13 @@ importers:
         version: 14.2.5(eslint@8.57.0)(typescript@5.5.3)
       eslint-plugin-tailwindcss:
         specifier: ^3.17.4
-        version: 3.17.4(tailwindcss@3.4.4)
+        version: 3.17.4(tailwindcss@3.4.5)
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
       tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.4
+        specifier: ^3.4.5
+        version: 3.4.5
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -1053,9 +1053,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  function-bind@1.1.1:
-    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
-
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
 
@@ -1141,10 +1138,6 @@ packages:
     resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
     engines: {node: '>= 0.4'}
 
-  has@1.0.3:
-    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
-    engines: {node: '>= 0.4.0'}
-
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
@@ -1202,9 +1195,6 @@ packages:
   is-callable@1.2.7:
     resolution: {integrity: sha512-1BC0BVFhS/p0qtw6enp8e+8OD0UrK0oFLztSjNzhcKA3WDuJxxAPXzPuPtKkjEY9UUoEWlX/8fgKeu2S8i9JTA==}
     engines: {node: '>= 0.4'}
-
-  is-core-module@2.13.0:
-    resolution: {integrity: sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==}
 
   is-core-module@2.14.0:
     resolution: {integrity: sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==}
@@ -1524,9 +1514,6 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -1795,8 +1782,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss@3.4.4:
-    resolution: {integrity: sha512-ZoyXOdJjISB7/BcLTR6SEsLgKtDStYyYZVLsUtWChO4Ps20CBad7lfJKVDiejocV4ME1hLmyY0WJE3hSDcmQ2A==}
+  tailwindcss@3.4.5:
+    resolution: {integrity: sha512-DlTxttYcogpDfx3tf/8jfnma1nfAYi2cBUYV2YNoPPecwmO3YGiFlOX9D8tGAu+EDF38ryBzvrDKU/BLMsUwbw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2910,11 +2897,11 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.11
 
-  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.4):
+  eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.5):
     dependencies:
       fast-glob: 3.3.2
       postcss: 8.4.39
-      tailwindcss: 3.4.4
+      tailwindcss: 3.4.5
 
   eslint-scope@7.2.2:
     dependencies:
@@ -3044,8 +3031,6 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  function-bind@1.1.1: {}
-
   function-bind@1.1.2: {}
 
   function.prototype.name@1.1.6:
@@ -3151,10 +3136,6 @@ snapshots:
     dependencies:
       has-symbols: 1.0.3
 
-  has@1.0.3:
-    dependencies:
-      function-bind: 1.1.1
-
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
@@ -3211,10 +3192,6 @@ snapshots:
       has-tostringtag: 1.0.2
 
   is-callable@1.2.7: {}
-
-  is-core-module@2.13.0:
-    dependencies:
-      has: 1.0.3
 
   is-core-module@2.14.0:
     dependencies:
@@ -3523,8 +3500,6 @@ snapshots:
 
   path-type@4.0.0: {}
 
-  picocolors@1.0.0: {}
-
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -3633,7 +3608,7 @@ snapshots:
 
   resolve@1.22.8:
     dependencies:
-      is-core-module: 2.13.0
+      is-core-module: 2.14.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
@@ -3803,11 +3778,11 @@ snapshots:
 
   tailwind-merge@2.4.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.4):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.5):
     dependencies:
-      tailwindcss: 3.4.4
+      tailwindcss: 3.4.5
 
-  tailwindcss@3.4.4:
+  tailwindcss@3.4.5:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -3822,7 +3797,7 @@ snapshots:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-hash: 3.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       postcss: 8.4.39
       postcss-import: 15.1.0(postcss@8.4.39)
       postcss-js: 4.0.1(postcss@8.4.39)
