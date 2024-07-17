@@ -1,3 +1,5 @@
+"use client";
+
 import { fetchProjects } from "@/actions/projects";
 import { Card } from "@/components/fleet/card";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
@@ -6,13 +8,17 @@ import ShineBorder from "@/components/magicui/shine-border";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/icons-react";
+import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
 
-export const runtime = "edge";
+export default function Home() {
+    const { isPending, error, data: projects } = useQuery({
+        queryKey: ['projects'],
+        queryFn: () => fetchProjects(),
+    })
 
-export default async function Home() {
-    const projects = await fetchProjects();
+    console.log(isPending);
 
     return (
         <main className="container pt-10 md:pt-20 max-w-2xl px-6">
@@ -61,7 +67,10 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "comission").length >= 1 && projects.filter(x => x.type === "comission").map((x, i) =>
+                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
+                    }
+                    {
+                        (projects ?? []).filter(x => x.type === "comission").length >= 1 && (projects ?? []).filter(x => x.type === "comission").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
@@ -82,7 +91,10 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "self_project").length >= 1 && projects.filter(x => x.type === "self_project").map((x, i) =>
+                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
+                    }
+                    {
+                        (projects ?? []).filter(x => x.type === "self_project").length >= 1 && (projects ?? []).filter(x => x.type === "self_project").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
@@ -103,7 +115,10 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "hobby").length >= 1 && projects.filter(x => x.type === "hobby").map((x, i) =>
+                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
+                    }
+                    {
+                        (projects ?? []).filter(x => x.type === "hobby").length >= 1 && (projects ?? []).filter(x => x.type === "hobby").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }
@@ -125,7 +140,10 @@ export default async function Home() {
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
                     {
-                        projects.filter(x => x.type === "volunteer").length >= 1 && projects.filter(x => x.type === "volunteer").map((x, i) =>
+                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
+                    }
+                    {
+                        (projects ?? []).filter(x => x.type === "volunteer").length >= 1 && (projects ?? []).filter(x => x.type === "volunteer").map((x, i) =>
                             <Card {...x} key={i} />
                         )
                     }

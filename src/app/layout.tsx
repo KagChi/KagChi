@@ -6,6 +6,7 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { IconHome, IconBrandLinkedin, IconBrandYoutube, IconNotebook } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
+import ClientLayout from "./clientLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,8 +35,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <TooltipProvider delayDuration={0}>
-                    {children}
-
+                    <ClientLayout>
+                        {children}
+                    </ClientLayout>
 
                     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-10 flex origin-bottom h-full max-h-14">
                         <div className="flex inset-x-0 bottom-0 mx-auto h-full relative">
