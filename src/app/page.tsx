@@ -18,8 +18,6 @@ export default function Home() {
         queryFn: () => fetchProjects(),
     })
 
-    console.log(isPending);
-
     return (
         <main className="container pt-10 md:pt-20 max-w-2xl px-6">
             <BlurIn>
