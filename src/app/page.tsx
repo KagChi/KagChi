@@ -24,7 +24,7 @@ export default function Home() {
                 <div className="flex flex-row gap-4 md:gap-8">
                     <div className="inline-block max-w-[600px]">
                         <p className="font-bold text-2xl md:text-5xl">Hi, I'm KagChi 😁</p>
-                        <p className="text-gray-500 md:text-lg mt-1">Fullstack Weeb Engineer, I love building things. doesnt like Theory. curious with things. very active at Discord.</p>
+                        <p className="text-gray-500 md:text-lg mt-1">Fullstack Weeb Engineer, I love building things. doesnt like Theory. curious with things. not very active at Discord.</p>
                     </div>
                     <Image className="size-28 rounded-full" src="/assets/images/K_Logo.webp" width={256} height={256} alt="Logo Profile" />
                 </div>
