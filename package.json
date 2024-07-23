@@ -18,7 +18,7 @@
     "@tanstack/react-query": "^5.51.11",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.8",
+    "framer-motion": "^11.3.12",
     "next": "14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@hazmi35/eslint-config": "^12.0.0",
     "@next/eslint-plugin-next": "^14.2.5",
-    "@types/node": "^20.14.11",
+    "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
