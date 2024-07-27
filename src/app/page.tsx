@@ -11,6 +11,7 @@ import { IconBrandDiscordFilled, IconBrandGithub, IconBrandX } from "@tabler/ico
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
+import { Show, For } from "@kagchi/nextify";
 
 export default function Home() {
     const { isPending, error, data: projects } = useQuery({
@@ -64,14 +65,17 @@ export default function Home() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    {
-                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
-                    }
-                    {
-                        (projects ?? []).filter(x => x.type === "comission").length >= 1 && (projects ?? []).filter(x => x.type === "comission").map((x, i) =>
-                            <Card {...x} key={i} />
-                        )
-                    }
+                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
+                        <For each={Array(4).fill(null)}>
+                            {(x, i) => <Card skeleton key={i} />}
+                        </For>
+                    </Show>
+
+                    <Show when={(projects ?? []).filter(x => x.type === "comission").length >= 1}>
+                        <For each={(projects ?? []).filter(x => x.type === "comission")}>
+                            {(x, i) => <Card {...x} key={i} />}
+                        </For>
+                    </Show>
                 </div>
             </BlurIn>
 
@@ -88,14 +92,17 @@ export default function Home() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    {
-                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
-                    }
-                    {
-                        (projects ?? []).filter(x => x.type === "self_project").length >= 1 && (projects ?? []).filter(x => x.type === "self_project").map((x, i) =>
-                            <Card {...x} key={i} />
-                        )
-                    }
+                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
+                        <For each={Array(4).fill(null)}>
+                            {(x, i) => <Card skeleton key={i} />}
+                        </For>
+                    </Show>
+
+                    <Show when={(projects ?? []).filter(x => x.type === "self_project").length >= 1}>
+                        <For each={(projects ?? []).filter(x => x.type === "self_project")}>
+                            {(x, i) => <Card {...x} key={i} />}
+                        </For>
+                    </Show>
                 </div>
             </BlurIn>
 
@@ -112,14 +119,17 @@ export default function Home() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    {
-                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
-                    }
-                    {
-                        (projects ?? []).filter(x => x.type === "hobby").length >= 1 && (projects ?? []).filter(x => x.type === "hobby").map((x, i) =>
-                            <Card {...x} key={i} />
-                        )
-                    }
+                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
+                        <For each={Array(4).fill(null)}>
+                            {(x, i) => <Card skeleton key={i} />}
+                        </For>
+                    </Show>
+
+                    <Show when={(projects ?? []).filter(x => x.type === "hobby").length >= 1}>
+                        <For each={(projects ?? []).filter(x => x.type === "hobby")}>
+                            {(x, i) => <Card {...x} key={i} />}
+                        </For>
+                    </Show>
                 </div>
             </BlurIn>
 
@@ -137,14 +147,17 @@ export default function Home() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    {
-                        (isPending || (projects?.length ?? 0) <= 0) && Array(4).fill(null).map(x => <Card skeleton />)
-                    }
-                    {
-                        (projects ?? []).filter(x => x.type === "volunteer").length >= 1 && (projects ?? []).filter(x => x.type === "volunteer").map((x, i) =>
-                            <Card {...x} key={i} />
-                        )
-                    }
+                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
+                        <For each={Array(4).fill(null)}>
+                            {(x, i) => <Card skeleton key={i} />}
+                        </For>
+                    </Show>
+
+                    <Show when={(projects ?? []).filter(x => x.type === "volunteer").length >= 1}>
+                        <For each={(projects ?? []).filter(x => x.type === "volunteer")}>
+                            {(x, i) => <Card {...x} key={i} />}
+                        </For>
+                    </Show>
                 </div>
             </BlurIn>
 

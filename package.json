@@ -12,6 +12,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@kagchi/nextify": "^1.1.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@tabler/icons-react": "^3.11.0",

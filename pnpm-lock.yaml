@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@kagchi/nextify':
+        specifier: ^1.1.1
+        version: 1.1.1
       '@radix-ui/react-separator':
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -183,6 +186,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.19':
     resolution: {integrity: sha512-kf37QtfW+Hwx/buWGMPcR60iF9ziHa6r/CZJIHbmcm4+0qrXiVdxegAH0F6yddEVQ7zdkjcGCgCzUu+BcbhQxw==}
+
+  '@kagchi/nextify@1.1.1':
+    resolution: {integrity: sha512-iDncZItUuBQtzPkyIXe7bNA6gdnmPUCUU5VtMSgXmIMwY79wyFBZm0xmSt7jOuBra5VTHYmm+QPIw/U6vS1l2Q==}
 
   '@next/env@14.2.5':
     resolution: {integrity: sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA==}
@@ -2010,6 +2016,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  '@kagchi/nextify@1.1.1':
+    dependencies:
+      react: 18.3.1
 
   '@next/env@14.2.5': {}
 
