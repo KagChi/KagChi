@@ -40,7 +40,7 @@ function parseType(type: string) {
 }
 
 export const fetchProjects = async () => {
-    const response = await fetch("https://cms.kagchi.my.id/items/projects?limit=10");
+    const response = await fetch("https://cms.kagchi.my.id/items/projects?limit=60");
     
     const { data } = await response.json() as { data: Project[] };
 
