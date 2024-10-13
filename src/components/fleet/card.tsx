@@ -26,7 +26,7 @@ export function Card({ image, website, name, description, github, role, skeleton
                                     )}
                                 </div>
 
-                                <div className="mt-auto flex gap-2">
+                                <div className="mt-auto flex flex-wrap gap-2">
                                     {website && (
                                         <Link href={website} className="hover:opacity-60">
                                             <Badge className="flex gap-2 w-fit rounded-md">
