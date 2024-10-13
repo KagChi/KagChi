@@ -20,7 +20,7 @@ export default function Home() {
     })
 
     return (
-        <main className="container pt-10 md:pt-20 max-w-6xl px-12">
+        <main className="container pt-10 md:pt-20 max-w-6xl px-6">
             <BlurIn>
                 <div className="flex flex-row gap-4 md:gap-8 justify-between">
                     <div className="inline-block max-w-[600px]">
