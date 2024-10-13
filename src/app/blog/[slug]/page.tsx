@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
+export const runtime = 'edge';
+
 export async function generateMetadata({ params }: { params: { slug: string; } }, parent: ResolvingMetadata): Promise<Metadata> {
     try {
         const blog = await fetchBlog(params.slug);
