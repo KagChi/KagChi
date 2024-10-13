@@ -6,6 +6,8 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,4 +24,70 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.rich-text p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.rich-text h1 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.rich-text h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.rich-text h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.rich-text ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.rich-text ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: decimal;
+}
+
+.rich-text li {
+    margin-bottom: 0.5rem;
+}
+
+.rich-text blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 2px solid #ccc;
+    font-style: italic;
+}
+
+.rich-text pre {
+    padding: 1rem;
+    background-color: #2d3748;
+    color: #f7fafc;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+}
+
+.rich-text code {
+    font-size: 0.875rem;
+    font-family: 'Courier New', monospace;
+    background-color: #2d3748;
+    color: #f7fafc;
+    border-radius: 0.25rem;
+    padding: 0.2rem 0.4rem;
 }

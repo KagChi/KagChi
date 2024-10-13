@@ -11,13 +11,16 @@ import ClientLayout from "./clientLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "KagChi - Home",
-    description: "I am KagChi, Fullstack Weeb developer. I Love building things. Very active at Discord",
+    title: {
+        template: "KagChi - %s",
+        default: "KagChi"
+    },
+    description: "I am KagChi, Fullstack Weeb developer. I Love building things. not Very active at Discord",
     openGraph: {
         type: "website",
         url: "https://kagchi.my.id",
         title: "KagChi - Home",
-        description: "I am KagChi, Fullstack Weeb developer. I Love building things. Very active at Discord",
+        description: "I am KagChi, Fullstack Weeb developer. I Love building things. Not very active at Discord",
     },
     icons: [
         {
