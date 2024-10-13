@@ -91,3 +91,13 @@ body {
     border-radius: 0.25rem;
     padding: 0.2rem 0.4rem;
 }
+
+.rich-text code.full {
+    width: 100%;
+    display: block;
+}
+
+.rich-text code.not-full {
+    width: auto;
+    display: inline-block;
+}

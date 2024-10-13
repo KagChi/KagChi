@@ -17,7 +17,7 @@ export default function Blog() {
         isFetchingNextPage,
     } = useInfiniteQuery({
         queryKey: ['blogs'],
-        queryFn: ({ pageParam = 1 }) => fetchBlogs(pageParam, 1),
+        queryFn: ({ pageParam = 1 }) => fetchBlogs(pageParam, 9),
         getNextPageParam: (lastPage) => {
             return lastPage.hasNextPage ? lastPage.curPage + 1 : undefined;
         },
