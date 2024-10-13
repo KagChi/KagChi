@@ -4,6 +4,7 @@ export interface Project {
     id: string;
     name: string;
     image: string;
+    date_created: string;
     description: string;
     role: string;
     links: string[];
@@ -26,7 +27,7 @@ function parseRole(role: string) {
     }
 }
 
-function parseType(type: string) {
+export function parseType(type: string) {
     switch (type) {
         case "comission":
             return "Comissioned Project";
@@ -34,16 +35,22 @@ function parseType(type: string) {
             return "Self Project";
         case "volunteer":
             return "Volunteer";
+        case "hobby":
+            return "Hobby";
         default:
             return "Unknown";
     }
 }
 
 export const fetchProjects = async () => {
-    const response = await fetch("https://cms.kagchi.my.id/items/projects?limit=60");
+    const response = await fetch("https://cms.kagchi.my.id/items/projects?limit=60&sort=-date_created");
     
     const { data } = await response.json() as { data: Project[] };
 
-    return data.map(x => ({ ...x, image: `https://cms.kagchi.my.id/assets/${x.image}`, role: parseRole(x.role), type: x.type }));
+    return data.map(x => ({ 
+        ...x, 
+        image: `https://cms.kagchi.my.id/assets/${x.image}`, 
+        role: parseRole(x.role), 
+        type: x.type 
+    }));
 };
-

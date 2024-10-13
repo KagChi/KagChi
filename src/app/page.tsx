@@ -14,20 +14,20 @@ import Link from "next/link";
 import { Show, For } from "@kagchi/nextify";
 
 export default function Home() {
-    const { isPending, error, data: projects } = useQuery({
+    const { isPending, error, data: projects = [] } = useQuery({
         queryKey: ['projects'],
         queryFn: () => fetchProjects(),
     })
 
     return (
-        <main className="container pt-10 md:pt-20 max-w-2xl px-6">
+        <main className="container pt-10 md:pt-20 max-w-6xl px-12">
             <BlurIn>
-                <div className="flex flex-row gap-4 md:gap-8">
+                <div className="flex flex-row gap-4 md:gap-8 justify-between">
                     <div className="inline-block max-w-[600px]">
                         <p className="font-bold text-2xl md:text-5xl">Hi, I'm KagChi 😁</p>
                         <p className="text-gray-500 md:text-lg mt-1">Fullstack Weeb Engineer, I love building things. doesnt like Theory. curious with things. not very active at Discord.</p>
                     </div>
-                    <Image className="size-28 rounded-full" src="/assets/images/K_Logo.webp" width={256} height={256} alt="Logo Profile" />
+                    <Image className="size-28 rounded-lg" src="/assets/images/K_Logo.webp" width={256} height={256} alt="Logo Profile" />
                 </div>
             </BlurIn>
 
@@ -53,7 +53,7 @@ export default function Home() {
 
             <BlurIn className="mt-12 flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
-                    <Badge className="w-fit">Commisioned Projects</Badge>
+                    <Badge className="w-fit">Latest Projects</Badge>
                     <div className="flex flex-col gap-3">
                         <h1 className="text-4xl font-bold">Checkout my latest work</h1>
                         <p className="text-sm text-gray-500">
@@ -64,97 +64,15 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 gap-x-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-6">
                     <Show when={isPending || (projects?.length ?? 0) <= 0}>
                         <For each={Array(4).fill(null)}>
                             {(x, i) => <Card skeleton key={i} />}
                         </For>
                     </Show>
 
-                    <Show when={(projects ?? []).filter(x => x.type === "comission").length >= 1}>
-                        <For each={(projects ?? []).filter(x => x.type === "comission")}>
-                            {(x, i) => <Card {...x} key={i} />}
-                        </For>
-                    </Show>
-                </div>
-            </BlurIn>
-
-            <BlurIn className="mt-12 flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                    <Badge className="w-fit">Self Projects</Badge>
-                    <div className="flex flex-col gap-3">
-                        <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm text-gray-500">
-                            In my self-initiated projects, I explore and experiment with various aspects of web development to continually improve my skills and stay current with industry trends.
-                            These projects are a testament to my dedication and passion for coding, allowing me to push the boundaries of creativity and technical proficiency.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
-                        <For each={Array(4).fill(null)}>
-                            {(x, i) => <Card skeleton key={i} />}
-                        </For>
-                    </Show>
-
-                    <Show when={(projects ?? []).filter(x => x.type === "self_project").length >= 1}>
-                        <For each={(projects ?? []).filter(x => x.type === "self_project")}>
-                            {(x, i) => <Card {...x} key={i} />}
-                        </For>
-                    </Show>
-                </div>
-            </BlurIn>
-
-            <BlurIn className="mt-12 flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                    <Badge className="w-fit">Hobby Projects</Badge>
-                    <div className="flex flex-col gap-3">
-                        <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm text-gray-500">
-                            As an IT enthusiast and web developer with a passion for exploring new technologies, my hobby projects are a reflection of my curiosity and creativity. 
-                            These projects range from innovative web applications to interactive Discord bots, each crafted with a blend of technical expertise and a love for problem-solving.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
-                        <For each={Array(4).fill(null)}>
-                            {(x, i) => <Card skeleton key={i} />}
-                        </For>
-                    </Show>
-
-                    <Show when={(projects ?? []).filter(x => x.type === "hobby").length >= 1}>
-                        <For each={(projects ?? []).filter(x => x.type === "hobby")}>
-                            {(x, i) => <Card {...x} key={i} />}
-                        </For>
-                    </Show>
-                </div>
-            </BlurIn>
-
-            <BlurIn className="mt-12 flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                    <Badge className="w-fit">Volunteer Projects</Badge>
-                    <div className="flex flex-col gap-3">
-                        <h1 className="text-4xl font-bold">Checkout my latest work</h1>
-                        <p className="text-sm text-gray-500">
-                            In addition to my professional and self-initiated projects, I have dedicated time to various volunteer projects.
-                            These opportunities have allowed me to contribute my skills to meaningful causes,
-                            support community initiatives, and collaborate with diverse teams.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 gap-x-6">
-                    <Show when={isPending || (projects?.length ?? 0) <= 0}>
-                        <For each={Array(4).fill(null)}>
-                            {(x, i) => <Card skeleton key={i} />}
-                        </For>
-                    </Show>
-
-                    <Show when={(projects ?? []).filter(x => x.type === "volunteer").length >= 1}>
-                        <For each={(projects ?? []).filter(x => x.type === "volunteer")}>
+                    <Show when={projects.length >= 1}>
+                        <For each={projects}>
                             {(x, i) => <Card {...x} key={i} />}
                         </For>
                     </Show>

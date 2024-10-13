@@ -1,9 +1,9 @@
-import { Project } from "@/actions/projects";
+import { parseType, Project } from "@/actions/projects";
 import { IconWorld, IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 
-export function Card({ image, website, name, description, github, role, skeleton }: Partial<Project> & { skeleton?: boolean; }) {
+export function Card({ image, website, name, description, github, role, skeleton, type }: Partial<Project> & { skeleton?: boolean; }) {
     return (
         <div className={`relative block ${skeleton ? "" : "cursor-pointer"} group h-72`}>
             <div className={`absolute inset-0 rounded-md ${skeleton ? "" : `border-2 border-dashed border-orange-200 transition-transform transform opacity-0 group-hover:opacity-100`} pointer-events-none`} />
@@ -42,6 +42,12 @@ export function Card({ image, website, name, description, github, role, skeleton
                                                 Source
                                             </Badge>
                                         </Link>
+                                    )}
+
+                                    {type && (
+                                        <Badge className="flex gap-2 w-fit rounded-md">
+                                            {parseType(type)}
+                                        </Badge>
                                     )}
                                 </div>
                             </div>
