@@ -1,5 +1,3 @@
-"use server";
-
 import { fetchBlog } from "@/actions/blogs";
 import BlurIn from "@/components/magicui/blur-in";
 import Link from "next/link";
