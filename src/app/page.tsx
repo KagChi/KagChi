@@ -1,7 +1,7 @@
 "use client";
 
 import { fetchProjects } from "@/actions/projects";
-import { Card } from "@/components/fleet/card";
+import { ProjectCard } from "@/components/fleet/ProjectCard";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import BlurIn from "@/components/magicui/blur-in";
 import ShineBorder from "@/components/magicui/shine-border";
@@ -67,13 +67,13 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-6">
                     <Show when={isPending || (projects?.length ?? 0) <= 0}>
                         <For each={Array(4).fill(null)}>
-                            {(x, i) => <Card skeleton key={i} />}
+                            {(x, i) => <ProjectCard skeleton key={i} />}
                         </For>
                     </Show>
 
                     <Show when={projects.length >= 1}>
                         <For each={projects}>
-                            {(x, i) => <Card {...x} key={i} />}
+                            {(x, i) => <ProjectCard {...x} key={i} />}
                         </For>
                     </Show>
                 </div>
