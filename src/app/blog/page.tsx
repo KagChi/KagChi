@@ -62,7 +62,7 @@ export default function Blog() {
             <BlurIn className="my-12 flex flex-col gap-6">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-6">
                     <Show when={isLoading && pages.length === 0}>
-                        <For each={Array(4).fill(null)}>
+                        <For each={Array(9).fill(null)}>
                             {(x, i) => <BlogCard skeleton key={i} />}
                         </For>
                     </Show>

@@ -1,5 +1,3 @@
-"use client";
-
 export interface Project {
     id: string;
     name: string;

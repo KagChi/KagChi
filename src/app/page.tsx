@@ -66,7 +66,7 @@ export default function Home() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-6">
                     <Show when={isPending || (projects?.length ?? 0) <= 0}>
-                        <For each={Array(4).fill(null)}>
+                        <For each={Array(9).fill(null)}>
                             {(x, i) => <ProjectCard skeleton key={i} />}
                         </For>
                     </Show>
