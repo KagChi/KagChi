@@ -5,12 +5,14 @@ import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { use } from "react";
 
 export const runtime = 'edge';
 
-export async function generateMetadata({ params }: { params: { slug: string; } }, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; }>; }, parent: ResolvingMetadata): Promise<Metadata> {
     try {
-        const blog = await fetchBlog(params.slug);
+        const { slug } = use(params);
+        const blog = await fetchBlog(slug);
    
         return {
             title: blog.title,
@@ -31,10 +33,12 @@ export async function generateMetadata({ params }: { params: { slug: string; } }
     }
 }
 
-export default async function BlogPage({ params }: { params: { slug: string; }; }) {
+export default async function BlogPage({ params }: { params: Promise<{ slug: string; }>; }) {
+    const { slug } = use(params);
+
     let blog;
     try {
-        blog = await fetchBlog(params.slug);
+        blog = await fetchBlog(slug);
         if (!blog) {
             return notFound();
         }
