@@ -1,3 +1,5 @@
+"use client";
+
 export interface Blog {
     id: string;
     title: string;
@@ -29,18 +31,15 @@ export const fetchBlogs = async (page = 1, limit = 20) => {
         return {
             blogs: data.map(x => ({
                 ...x,
-                image: `https://cms.kagchi.my.id/assets/${x.image}`
+                image: `https://wsrv.nl/?url=cms.kagchi.my.id/assets/${x.image}&output=webp&ll`
             })),
             hasNextPage,
             curPage: page
         };
     } catch (error) {
         console.error("Failed to fetch blogs:", error);
-        throw error; // Rethrow the error to be caught in the component
     }
 };
-
-
 
 export const fetchBlog = async (slug: string) => {
     const response = await fetch(`https://cms.kagchi.my.id/items/blogs?filter[slug][_eq]=${slug}`);
@@ -49,6 +48,6 @@ export const fetchBlog = async (slug: string) => {
 
     return data.map(x => ({ 
         ...x, 
-        image: `https://cms.kagchi.my.id/assets/${x.image}` 
+        image: `https://wsrv.nl/?url=cms.kagchi.my.id/assets/${x.image}&output=webp&ll` 
     }))[0];
 };

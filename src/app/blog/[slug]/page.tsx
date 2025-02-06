@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 export const runtime = 'edge';
 
@@ -37,7 +38,7 @@ export default async function BlogPage({ params }: { params: { slug: string; }; 
         if (!blog) {
             return notFound();
         }
-    } catch (error) {
+    } catch {
         return notFound();
     }
 
@@ -52,7 +53,7 @@ export default async function BlogPage({ params }: { params: { slug: string; }; 
 
                 <BlurIn className="mt-12 pb-28">
                     <div className="prose prose-lg max-w-none">
-                        <img src={blog.image} alt={blog.title} className="w-full h-80 object-cover rounded-md mb-6" />
+                        <Image height={720} width={1080} src={blog.image} alt={blog.title} className="w-full h-80 object-cover rounded-md mb-6" />
 
                         <div className="rich-text" dangerouslySetInnerHTML={{ __html: blog.content }} />
                     </div>

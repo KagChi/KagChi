@@ -19,7 +19,7 @@ export default function Blog() {
         queryKey: ['blogs'],
         queryFn: ({ pageParam = 1 }) => fetchBlogs(pageParam, 9),
         getNextPageParam: (lastPage) => {
-            return lastPage.hasNextPage ? lastPage.curPage + 1 : undefined;
+            return lastPage?.hasNextPage ? lastPage?.curPage + 1 : undefined;
         },
         initialPageParam: 1,
     });
@@ -50,7 +50,7 @@ export default function Blog() {
         };
     }, []);
 
-    const pages = data?.pages ?? [];
+    const pages = data?.pages.filter(x => x !== undefined) ?? [];
 
     return (
         <main className="container pt-10 md:pt-20 max-w-6xl px-6">

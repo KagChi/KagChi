@@ -14,7 +14,7 @@ import Link from "next/link";
 import { Show, For } from "@kagchi/nextify";
 
 export default function Home() {
-    const { isPending, error, data: projects = [] } = useQuery({
+    const { isPending, data: projects = [] } = useQuery({
         queryKey: ['projects'],
         queryFn: () => fetchProjects(),
     })

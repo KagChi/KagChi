@@ -13,56 +13,32 @@
   },
   "dependencies": {
     "@kagchi/nextify": "^1.1.1",
-    "@radix-ui/react-separator": "^1.1.0",
-    "@radix-ui/react-tooltip": "^1.1.2",
-    "@tabler/icons-react": "^3.11.0",
-    "@tanstack/react-query": "^5.51.21",
-    "class-variance-authority": "^0.7.0",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "@tabler/icons-react": "^3.29.0",
+    "@tanstack/react-query": "^5.66.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.21",
-    "next": "14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "framer-motion": "^12.3.1",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@hazmi35/eslint-config": "^12.0.0",
-    "@next/eslint-plugin-next": "^14.2.5",
-    "@types/node": "^20.14.14",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.5",
-    "eslint-plugin-tailwindcss": "^3.17.4",
-    "postcss": "^8.4.40",
+    "@next/eslint-plugin-next": "^15.1.6",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.18.0",
+    "postcss": "^8.5.1",
     "tailwindcss": "^3.4.7",
-    "typescript": "^5.5.4"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "extends": [
-      "@hazmi35/eslint-config/typescript",
-      "plugin:tailwindcss/recommended",
-      "next"
-    ],
-    "rules": {
-      "tailwindcss/no-custom-classname": [
-        "error",
-        {
-          "whitelist": [
-            "fa-.*"
-          ]
-        }
-      ],
-      "@typescript-eslint/naming-convention": "off",
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/no-redundant-type-constituents": "off",
-      "max-lines": "off"
-    }
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   },
   "repository": {
     "type": "git",
