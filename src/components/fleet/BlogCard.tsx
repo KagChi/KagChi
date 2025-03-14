@@ -1,13 +1,12 @@
 import { Blog } from "@/actions/blogs";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
 import React, { forwardRef } from "react";
 
 interface BlogCardProps extends Partial<Blog> {
     skeleton?: boolean;
 }
 
-const BlogCard = forwardRef<HTMLAnchorElement, BlogCardProps>(({ image, title, slug, tags, description, skeleton }, ref) => {
+const BlogCard = forwardRef<HTMLAnchorElement, BlogCardProps>(({ image, title, slug, description, skeleton }, ref) => {
     return (
         <Link
             href={skeleton ? "#" : `/blog/${slug}`}
@@ -22,21 +21,11 @@ const BlogCard = forwardRef<HTMLAnchorElement, BlogCardProps>(({ image, title, s
             >
                 {
                     !skeleton && <>
-                        <div className="w-full h-40 bg-cover rounded-t-md" style={{ backgroundImage: `url(${image})` }} />
+                        <div className="w-full h-40 bg-cover rounded-t-md" style={{ backgroundImage: `url(${image?.url})` }} />
                         <div className="rounded-b-md py-2 px-4 flex-grow flex flex-col gap-6">
                             <div className="h-24">
                                 <p className="font-bold">{title}</p>
                                 <p className="text-xs text-gray-500 line-clamp-4">{description}</p>
-                            </div>
-
-                            <div className="flex flex-col gap-2">
-                                <div className="mt-auto flex gap-2">
-                                    {tags && tags.map((tag, index) => (
-                                        <Badge key={index} className="flex gap-2 w-fit rounded-md">
-                                            {tag}
-                                        </Badge>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </>
