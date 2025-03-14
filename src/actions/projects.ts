@@ -24,8 +24,8 @@ function parseRole(role: string) {
 
 export function parseType(type: string) {
     switch (type) {
-        case "comission":
-            return "Comissioned Project";
+        case "commission":
+            return "Commissioned Project";
         case "self_project":
             return "Self Project";
         case "volunteer":
