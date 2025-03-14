@@ -21,7 +21,7 @@ export interface FetchBlogsResponse {
 
 export const fetchBlogs = async (page = 1, limit = 20) => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/posts?limit=${limit}&page=${page}&sort=-createdAt`);
+        const response = await fetch(`${process.env.VERCEL_URL ?? process.env.NEXT_PUBLIC_API_BASE}/api/posts?limit=${limit}&page=${page}&sort=-createdAt`);
 
         if (!response.ok) {
             throw new Error(`Error ${response.status}: ${response.statusText}`);
@@ -57,7 +57,7 @@ export const fetchBlog = async (slug: string) => {
 
     console.log(`/api/posts${stringifiedQuery}`);
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/posts${stringifiedQuery}`)
+    const response = await fetch(`${process.env.VERCEL_URL ?? process.env.NEXT_PUBLIC_API_BASE}/api/posts${stringifiedQuery}`)
     const { docs } = await response.json() as { docs: Blog[], hasNextPage: boolean };;
 
     return docs[0];

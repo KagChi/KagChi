@@ -38,7 +38,7 @@ export function parseType(type: string) {
 }
 
 export const fetchProjects = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/projects?limit=60&sort=-createdAt`);
+    const response = await fetch(`${process.env.VERCEL_URL ?? process.env.NEXT_PUBLIC_API_BASE}/api/projects?limit=60&sort=-createdAt`);
     const { docs } = await response.json() as { docs: Project[] };
 
     return docs.map(x => ({ 
