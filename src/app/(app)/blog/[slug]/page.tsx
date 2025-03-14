@@ -7,8 +7,6 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { RichText } from '@payloadcms/richtext-lexical/react'
 
-export const runtime = 'edge';
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; }>; }, parent: ResolvingMetadata): Promise<Metadata> {
     try {
         const blog = await fetchBlog((await params).slug);
