@@ -9,7 +9,7 @@ import React from 'react'
 import { importMap } from './admin/importMap.js'
 import './custom.scss'
 
-type Args = {
+interface Args {
   children: React.ReactNode
 }
 
