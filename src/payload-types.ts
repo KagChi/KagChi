@@ -67,7 +67,6 @@ export interface Config {
   blocks: {};
   collections: {
     posts: Post;
-    projects: Project;
     media: Media;
     users: User;
     'payload-locked-documents': PayloadLockedDocument;
@@ -77,7 +76,6 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     posts: PostsSelect<false> | PostsSelect<true>;
-    projects: ProjectsSelect<false> | ProjectsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -191,22 +189,6 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects".
- */
-export interface Project {
-  id: number;
-  name?: string | null;
-  description?: string | null;
-  image?: (number | null) | Media;
-  git?: string | null;
-  role?: ('fullstack_developer' | 'frontend_developer' | 'backend_developer') | null;
-  type?: ('volunteer' | 'commission' | 'self_project' | 'hobby') | null;
-  url?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -232,10 +214,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
-      } | null)
-    | ({
-        relationTo: 'projects';
-        value: number | Project;
       } | null)
     | ({
         relationTo: 'media';
@@ -297,21 +275,6 @@ export interface PostsSelect<T extends boolean = true> {
   description?: T;
   image?: T;
   slug?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects_select".
- */
-export interface ProjectsSelect<T extends boolean = true> {
-  name?: T;
-  description?: T;
-  image?: T;
-  git?: T;
-  role?: T;
-  type?: T;
-  url?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -106,10 +106,92 @@ const Posts: CollectionConfig = {
     ]
 }
 
+const Projects: CollectionConfig = {
+    slug: "projects",
+    access: {
+        create: ({ req: { user } }) => {
+            return Boolean(user)
+        },
+        update: ({ req: { user }}) => {
+            return Boolean(user)
+        },
+        delete: ({ req: { user }}) => {
+            return Boolean(user)
+        },
+        read: () => {
+            return true
+        }
+    },
+    fields: [
+        {
+            name: "name",
+            type: "text",
+        },
+        {
+            name: "description",
+            type: "textarea",
+        },
+        {
+            name: "image",
+            type: "upload",
+            relationTo: "media",
+        },
+        {
+            name: "git",
+            type: "text",
+        },
+        {
+            name: "role",
+            type: "radio",
+            options: [
+                {
+                    label: "Fullstack Developer",
+                    value: "fullstack_developer",
+                },
+                {
+                    label: "Frontend Developer",
+                    value: "frontend_developer",
+                },
+                {
+                    label: "Backend Developer",
+                    value: "backend_developer",
+                }
+            ]
+        },
+        {
+            name: "type",
+            type: "radio",
+            options: [
+                {
+                    label: "Volunteer",
+                    value: "volunteer",
+                },
+                {
+                    label: "Commission",
+                    value: "commission",
+                },
+                {
+                    label: "Self Project",
+                    value: "self_project",
+                },
+                {
+                    label: "Hobby",
+                    value: "hobby",
+                }
+            ]
+        },
+        {
+            name: "url",
+            type: "text",
+        },
+    ]
+}
+
 export default buildConfig({
     editor: lexicalEditor(),
     collections: [
         Posts,
+        Projects,
         Media
     ],
     secret: process.env.PAYLOAD_SECRET || "",
