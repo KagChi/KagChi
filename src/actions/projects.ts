@@ -1,24 +1,21 @@
 export interface Project {
     id: string;
     name: string;
-    image: string;
-    date_created: string;
+    image: { url: string };
     description: string;
     role: string;
-    links: string[];
-    own_project: boolean;
     type: string;
-    github?: string;
-    website?: string;
+    git?: string;
+    url?: string;
 }
 
 function parseRole(role: string) {
     switch (role) {
-        case "fullstack":
+        case "fullstack_developer":
             return "Fullstack Developer";
-        case "frontend":
+        case "frontend_developer":
             return "Frontend Developer";
-        case "backend":
+        case "backend_developer":
             return "Backend Developer";
         default:
             return "Unknown";
@@ -41,13 +38,11 @@ export function parseType(type: string) {
 }
 
 export const fetchProjects = async () => {
-    const response = await fetch("https://cms.kagchi.my.id/items/projects?limit=60&sort=-date_created");
-    
-    const { data } = await response.json() as { data: Project[] };
+    const response = await fetch(`${process.env.VERCEL_URL ?? process.env.NEXT_PUBLIC_API_BASE}/api/projects?limit=60&sort=-createdAt`);
+    const { docs } = await response.json() as { docs: Project[] };
 
-    return data.map(x => ({ 
-        ...x, 
-        image: `https://cms.kagchi.my.id/assets/${x.image}`, 
+    return docs.map(x => ({ 
+        ...x,
         role: parseRole(x.role), 
         type: x.type 
     }));

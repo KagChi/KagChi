@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-
-export const runtime = 'edge';
+import { RichText } from '@payloadcms/richtext-lexical/react'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; }>; }, parent: ResolvingMetadata): Promise<Metadata> {
     try {
@@ -16,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             title: blog.title,
             description: blog.description,
             openGraph: {
-                images: [{ url: blog.image, alt: blog.title }],
+                images: [{ url: blog.image.url, alt: blog.title }],
             },
         }
     } catch {
@@ -55,9 +54,9 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
 
                 <BlurIn className="mt-12 pb-28">
                     <div className="prose prose-lg max-w-none">
-                        <Image height={720} width={1080} src={blog.image} alt={blog.title} className="w-full h-80 object-cover rounded-md mb-6" />
+                        <Image height={720} width={1080} src={blog.image.url} alt={blog.title} className="w-full h-80 object-cover rounded-md mb-6" />
 
-                        <div className="rich-text" dangerouslySetInnerHTML={{ __html: blog.content }} />
+                        <RichText className="rich-text" data={blog.content} />
                     </div>
                     
                     <Link href="#top" className="text-blue-500 hover:underline mt-4 inline-block">↑ Back to Top</Link>
