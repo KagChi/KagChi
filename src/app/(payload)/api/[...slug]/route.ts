@@ -11,6 +11,8 @@ import {
   REST_PUT,
 } from '@payloadcms/next/routes'
 
+export const runtime = 'edge';
+
 export const GET = REST_GET(config)
 export const POST = REST_POST(config)
 export const DELETE = REST_DELETE(config)

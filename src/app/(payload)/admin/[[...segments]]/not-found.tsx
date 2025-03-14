@@ -13,6 +13,8 @@ interface Args {
   searchParams: Promise<Record<string, string | string[]>>
 }
 
+export const runtime = 'edge';
+
 export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
   generatePageMetadata({ config, params, searchParams })
 
